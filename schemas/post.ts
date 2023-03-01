@@ -33,6 +33,19 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'secondaryImages',
+      title: 'Secondary images',
+      type: 'array',
+      of: [
+        {
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+        },
+      ],
+    }),
+    defineField({
       name: 'categories',
       title: 'Categories',
       type: 'array',
@@ -58,7 +71,7 @@ export default defineType({
     },
     prepare(selection) {
       const { categories } = selection;
-      return { ...selection, categories};
+      return { ...selection, categories };
     },
   },
 });
