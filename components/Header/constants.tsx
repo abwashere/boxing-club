@@ -15,7 +15,7 @@ export const clubMenuItems: NavMenuItem[] = [
   },
 ];
 
-export const gallerieMenuItems: NavMenuItem[] = [
+export const galleryMenuItems: NavMenuItem[] = [
   {
     name: 'La salle',
     url: '/gallerie/la-salle',

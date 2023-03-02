@@ -5,13 +5,13 @@ module.exports = {
   content: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      // Same colos used in the Sanity Studio
+      // Same colors used in the Sanity Studio
       colors: {
         black: colors.black,
         white: colors.white,
-        'gray-light': colors.slate['50'],
-        gray: colors.slate['400'],
-        'gray-dark': colors.slate['700'],
+        'gray-light': colors.neutral['50'],
+        gray: colors.neutral['400'],
+        'gray-dark': colors.neutral['800'],
         yellow: colors.yellow['400'],
         green: colors.emerald['700'],
         orange: colors.orange['400'],

@@ -5,9 +5,9 @@ const colors = require('tailwindcss/colors');
 const props = {
   '--my-white': colors.white,
   '--my-black': colors.black,
-  '--my-gray-light': colors.slate['50'],
-  '--my-gray': colors.slate['400'],
-  '--my-gray-dark': colors.slate['700'],
+  '--my-gray-light': colors.neutral['50'],
+  '--my-gray': colors.neutral['400'],
+  '--my-gray-dark': colors.neutral['800'],
   '--my-yellow': colors.yellow['400'],
   '--my-green': colors.emerald['700'],
   '--my-orange': colors.orange['400'],

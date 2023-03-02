@@ -1,7 +1,12 @@
-type Props = {};
+import LogoVBC from '@/assets/logo-vbc.png';
+import Image from 'next/image';
 
-const Logo = (props: Props) => {
-  return <div>Logo</div>;
+type Props = {
+  small?: boolean;
+};
+
+const Logo = ({ small }: Props) => {
+  return <Image width={small ? 150 : 220} alt='logo' src={LogoVBC} />;
 };
 
 export default Logo;
