@@ -1,15 +1,17 @@
 import { buildLegacyTheme } from 'sanity';
 
+const colors = require('tailwindcss/colors');
+
 const props = {
-  '--my-white': '#FFFFFF',
-  '--my-black': '#000000',
-  '--my-gray-light': '#eeeeee',
-  '--my-gray': '#7F7F7F',
-  '--my-gray-dark': '#3B3B3B',
-  '--my-green': '#08693A',
-  '--my-yellow': '#F0D212',
-  '--my-orange': '#F08812',
-  '--my-red': '#DB4437',
+  '--my-white': colors.white,
+  '--my-black': colors.black,
+  '--my-gray-light': colors.slate['50'],
+  '--my-gray': colors.slate['400'],
+  '--my-gray-dark': colors.slate['700'],
+  '--my-yellow': colors.yellow['400'],
+  '--my-green': colors.emerald['700'],
+  '--my-orange': colors.orange['400'],
+  '--my-red': colors.red['500'],
 };
 
 export const myTheme = buildLegacyTheme({
@@ -28,7 +30,7 @@ export const myTheme = buildLegacyTheme({
 
   // Default button
   '--default-button-color': props['--my-gray'],
-  '--default-button-primary-color': props['--my-gray'],
+  '--default-button-primary-color': props['--my-yellow'],
   '--default-button-success-color': props['--my-green'],
   '--default-button-warning-color': props['--my-orange'],
   '--default-button-danger-color': props['--my-red'],
@@ -44,5 +46,4 @@ export const myTheme = buildLegacyTheme({
   '--main-navigation-color--inverted': props['--my-gray-light'],
 
   '--focus-color': props['--my-yellow'],
-
 });
