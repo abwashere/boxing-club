@@ -25,8 +25,8 @@ const Menu = () => {
         <CollapsableMenu
           items={clubMenuItems}
           classes={classNames(
-            'tablet:absolute tablet:-right-4 tablet:w-48',
-            // {'block' : isClubMenuOpen},
+            'tablet:block tablet:absolute tablet:-right-4 tablet:w-48',
+            { hidden: !isClubMenuOpen },
           )}
           hoverItemClasses={hoverItemClasses}
           isOpen={isClubMenuOpen}
@@ -52,7 +52,10 @@ const Menu = () => {
         </div>
         <CollapsableMenu
           items={galleryMenuItems}
-          classes={classNames('tablet:absolute tablet:-right-4 tablet:w-24')}
+          classes={classNames(
+            'tablet:block tablet:absolute tablet:-right-4 tablet:w-24',
+            { hidden: !isGalleryMenuOpen },
+          )}
           hoverItemClasses={hoverItemClasses}
           isOpen={isGalleryMenuOpen}
         />

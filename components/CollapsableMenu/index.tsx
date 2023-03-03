@@ -20,8 +20,10 @@ const CollapsableMenu = ({
         classes,
         'top-100 rounded w-full tablet:px-4 tablet:py-2 tablet:text-right',
         'tablet:shadow-xl shadow-neutral-100 bg-gray-dark',
-        'transition transform scale-y-0 duration-700 origin-top',
-        { 'transition transform scale-y-100 duration-700': isOpen },
+        'transition-transform scale-y-0 duration-500 origin-top',
+        {
+          'transition-transform scale-y-100 duration-500': isOpen,
+        },
       )}
     >
       {items.map(item => (
