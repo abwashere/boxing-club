@@ -1,4 +1,3 @@
-import Banner from '@/components/Banner';
 import Header from '@/components/Header';
 import '@/styles/globals.css';
 
@@ -20,7 +19,6 @@ export default function RootLayout({
     <html lang='fr'>
       <body className='font-sans'>
         <Header />
-        <Banner />
         {children}
       </body>
     </html>

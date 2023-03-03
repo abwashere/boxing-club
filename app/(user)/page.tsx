@@ -1,7 +1,11 @@
+import Banner from '@/components/Banner';
+
 export default function HomePage() {
   return (
     <>
-      <h2 className="text-red">Club de boxe</h2>
+      <Banner />
+
+      <h2 className='text-red'>Club de boxe</h2>
     </>
   );
 }
