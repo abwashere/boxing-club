@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import Burger from '@/components/Burger';
 import HeaderLogo from './components/HeaderLogo';
-import Menu from './components/Menu';
+import Nav from './components/Nav';
 
 const Header = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
@@ -31,7 +31,7 @@ const Header = () => {
         <div
           className={classNames({ hidden: !isMobileNavOpen }, 'tablet:block')}
         >
-          <Menu />
+          <Nav />
         </div>
       </nav>
     </header>

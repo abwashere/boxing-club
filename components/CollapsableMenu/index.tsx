@@ -1,8 +1,9 @@
-import { NavMenuItem } from '@/features/Header/constants';
+import NavLink from '@/components/NavLink';
+import { TNavLink } from '@/features/Header/constants';
 import classNames from 'classnames';
 
 type Props = {
-  items: NavMenuItem[];
+  items: TNavLink[];
   classes: string;
   hoverItemClasses: string;
   isOpen: boolean;
@@ -31,7 +32,7 @@ const CollapsableMenu = ({
           key={item.url}
           className={classNames(hoverItemClasses, 'h-6 tablet:mt-2')}
         >
-          {item.name}
+          <NavLink {...item} />
         </li>
       ))}
     </ul>

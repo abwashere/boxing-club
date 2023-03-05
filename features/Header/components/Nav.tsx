@@ -1,10 +1,17 @@
 import CollapsableMenu from '@/components/CollapsableMenu';
+import NavLink from '@/components/NavLink';
 import classNames from 'classnames';
-import Link from 'next/link';
 import { useState } from 'react';
-import { clubMenuItems, galleryMenuItems } from '../constants';
+import {
+  actusLink,
+  clubLink,
+  clubMenuItems,
+  gallerieLink,
+  galleryMenuItems,
+  inscriptionsLink,
+} from '../constants';
 
-const Menu = () => {
+const Nav = () => {
   const [isClubMenuOpen, setIsClubMenuOpen] = useState(false);
   const [isGalleryMenuOpen, setIsGalleryMenuOpen] = useState(false);
 
@@ -19,8 +26,10 @@ const Menu = () => {
         onMouseEnter={() => setIsClubMenuOpen(true)}
         onMouseLeave={() => setIsClubMenuOpen(false)}
       >
-        <div className={classNames(hoverItemClasses, 'h-6 font-bold')}>
-          LE CLUB
+        <div
+          className={classNames(hoverItemClasses, 'h-6 font-bold uppercase')}
+        >
+          <NavLink {...clubLink} />
         </div>
         <CollapsableMenu
           items={clubMenuItems}
@@ -36,10 +45,10 @@ const Menu = () => {
         className={classNames(
           navLinkClassNames,
           hoverItemClasses,
-          'h-6 font-bold',
+          'h-6 font-bold uppercase',
         )}
       >
-        <Link href='/actu'>ACTUALITÉS</Link>
+        <NavLink {...actusLink} />
       </div>
       <div
         className={classNames(navLinkClassNames, 'tablet:relative')}
@@ -47,8 +56,10 @@ const Menu = () => {
         onMouseEnter={() => setIsGalleryMenuOpen(true)}
         onMouseLeave={() => setIsGalleryMenuOpen(false)}
       >
-        <div className={classNames(hoverItemClasses, 'h-6 font-bold')}>
-          GALLERIE
+        <div
+          className={classNames(hoverItemClasses, 'h-6 font-bold uppercase')}
+        >
+          <NavLink {...gallerieLink} />
         </div>
         <CollapsableMenu
           items={galleryMenuItems}
@@ -64,13 +75,13 @@ const Menu = () => {
         className={classNames(
           navLinkClassNames,
           hoverItemClasses,
-          'h-6 font-bold text-yellow',
+          'h-6 font-bold text-yellow uppercase',
         )}
       >
-        <Link href='/inscriptions'>INSCRIPTIONS</Link>
+        <NavLink {...inscriptionsLink} />
       </div>
     </div>
   );
 };
 
-export default Menu;
+export default Nav;
