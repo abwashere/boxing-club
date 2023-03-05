@@ -1,10 +1,10 @@
 'use client';
 import { useState } from 'react';
+import classNames from 'classnames';
 
 import Burger from '@/components/Burger';
-import classNames from 'classnames';
-import HeaderLogo from './HeaderLogo';
-import Menu from './Menu';
+import HeaderLogo from './components/HeaderLogo';
+import Menu from './components/Menu';
 
 const Header = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
@@ -12,7 +12,9 @@ const Header = () => {
   return (
     <header
       className={classNames(
-        'flex flex-row-reverse justify-between items-start px-4 py-2 text-sm tablet:flex-row tablet:items-center bg-gray-dark text-gray-light',
+        'flex flex-row-reverse justify-between items-start px-4 py-2',
+        'tablet:flex-row tablet:items-center',
+        'bg-gray-dark text-gray-light text-sm',
       )}
     >
       <HeaderLogo />

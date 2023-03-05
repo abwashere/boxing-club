@@ -22,8 +22,8 @@ export const myTheme = buildLegacyTheme({
   '--gray': props['--my-gray'],
   '--gray-base': props['--my-gray'],
 
-  '--component-bg': props['--my-white'],
-  '--component-text-color': props['--my-gray-dark'],
+  '--component-bg': props['--my-gray'],
+  '--component-text-color': props['--my-gray-light'],
 
   /* Brand */
   '--brand-primary': props['--my-gray'],

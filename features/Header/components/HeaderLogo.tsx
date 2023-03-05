@@ -7,7 +7,7 @@ const HeaderLogo = () => {
       <Link className='flex items-center tablet:hidden' href='/'>
         <Logo small />
       </Link>
-      <Link className='items-center hidden tablet:flex ' href='/'>
+      <Link className='items-center hidden tablet:flex' href='/'>
         <Logo />
       </Link>
     </>

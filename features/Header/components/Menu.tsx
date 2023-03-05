@@ -2,7 +2,7 @@ import CollapsableMenu from '@/components/CollapsableMenu';
 import classNames from 'classnames';
 import Link from 'next/link';
 import { useState } from 'react';
-import { clubMenuItems, galleryMenuItems } from './constants';
+import { clubMenuItems, galleryMenuItems } from '../constants';
 
 const Menu = () => {
   const [isClubMenuOpen, setIsClubMenuOpen] = useState(false);
@@ -39,7 +39,7 @@ const Menu = () => {
           'h-6 font-bold',
         )}
       >
-        <Link href='/resultats'>RÉSULTATS</Link>
+        <Link href='/actu'>ACTUALITÉS</Link>
       </div>
       <div
         className={classNames(navLinkClassNames, 'tablet:relative')}

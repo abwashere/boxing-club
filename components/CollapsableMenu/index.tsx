@@ -1,4 +1,4 @@
-import { NavMenuItem } from '@/components/Header/constants';
+import { NavMenuItem } from '@/features/Header/constants';
 import classNames from 'classnames';
 
 type Props = {
