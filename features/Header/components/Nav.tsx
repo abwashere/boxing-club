@@ -29,7 +29,7 @@ const Nav = () => {
         <div
           className={classNames(hoverItemClasses, 'h-6 font-bold uppercase')}
         >
-          <NavLink {...clubLink} />
+          {clubLink.name}
         </div>
         <CollapsableMenu
           items={clubMenuItems}
@@ -59,7 +59,7 @@ const Nav = () => {
         <div
           className={classNames(hoverItemClasses, 'h-6 font-bold uppercase')}
         >
-          <NavLink {...gallerieLink} />
+          {gallerieLink.name}
         </div>
         <CollapsableMenu
           items={galleryMenuItems}

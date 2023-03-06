@@ -1,4 +1,5 @@
 import Header from '@/features/Header';
+import MainWrapper from '@/features/MainWrapper';
 import '@/styles/globals.css';
 
 export const metadata = {
@@ -17,9 +18,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang='fr'>
-      <body className='font-sans'>
+      <body>
         <Header />
-        {children}
+        <MainWrapper>{children}</MainWrapper>
       </body>
     </html>
   );

@@ -12,28 +12,35 @@ const Header = () => {
   return (
     <header
       className={classNames(
-        'flex flex-row-reverse justify-between items-start px-4 py-2',
-        'tablet:flex-row tablet:items-center',
-        'bg-gray-dark text-gray-light text-sm',
+        'sticky top-0 bg-gray-dark text-gray-light text-sm',
       )}
     >
-      <HeaderLogo />
-      <nav>
-        <div
-          className={classNames('-ml-1 -mt-1 tablet:hidden', {
-            'mb-6': isMobileNavOpen,
-          })}
-          onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
-        >
-          <Burger />
-        </div>
-        {/* TODO: transition top to bottom */}
-        <div
-          className={classNames({ hidden: !isMobileNavOpen }, 'tablet:block')}
-        >
-          <Nav />
-        </div>
-      </nav>
+      <div
+        className={classNames(
+          'flex flex-row-reverse justify-between items-start',
+          'tablet:flex-row tablet:items-center',
+          'max-w-laptop-lg mx-auto',
+          'py-2 px-1 tablet:px-4 laptop:px-8 desktop:px-0',
+        )}
+      >
+        <HeaderLogo />
+        <nav>
+          <div
+            className={classNames('-ml-1 -mt-1 tablet:hidden', {
+              'mb-6': isMobileNavOpen,
+            })}
+            onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
+          >
+            <Burger />
+          </div>
+          {/* TODO: transition top to bottom */}
+          <div
+            className={classNames({ hidden: !isMobileNavOpen }, 'tablet:block')}
+          >
+            <Nav />
+          </div>
+        </nav>
+      </div>
     </header>
   );
 };

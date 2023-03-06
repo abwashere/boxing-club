@@ -1,6 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 const colors = require('tailwindcss/colors');
 
+const myBreakpoints = {
+  tablet: '768px',
+  laptop: '1024px',
+  'laptop-lg': '1280px',
+  desktop: '1440px',
+};
+
 module.exports = {
   content: [
     './app/**/*.{js,ts,jsx,tsx}',
@@ -25,10 +32,9 @@ module.exports = {
         sans: ['Montserrat', 'sans-serif'],
         serif: ['"Roboto Serif"', 'serif'],
       },
-      screens: {
-        tablet: '640px',
-        laptop: '1024px',
-        desktop: '1280px',
+      screens: myBreakpoints,
+      maxWidth: {
+        'laptop-lg': myBreakpoints['laptop-lg'],
       },
     },
   },
