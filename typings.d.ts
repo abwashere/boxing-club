@@ -19,6 +19,7 @@ interface Post extends Base {
 }
 
 interface Category extends Base {
+    _id: string;
   title: string;
 }
 
