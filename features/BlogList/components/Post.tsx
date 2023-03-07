@@ -1,8 +1,9 @@
 import Chip from '@/components/Chip';
+import ClientSideRoute from '@/components/ClientSideRoute';
 import DateChip from '@/components/DateChip';
 import ArrowUpRight from '@/components/Icons/ArrowUpRight';
 import { getFormattedDate } from '@/utils/getFormattedDate';
-import Link from 'next/link';
+import { actusUrl } from '@/utils/urls';
 import PostImage from './PostImage';
 
 type Props = { post: Post };
@@ -19,7 +20,7 @@ const Post = ({ post }: Props) => {
       </div>
 
       <div className='relative flex-1 p-2 border-b-2 tablet:border-b-0 border-neutral-700 laptop:border laptop:rounded-r-xl laptop:p-5 group'>
-        <Link href='/url-a-ajouter'>
+        <ClientSideRoute route={`${actusUrl}/${post.slug.current}`}>
           <h2 className='mb-2'>{post.title}</h2>
           <div className='flex mb-2 gap-x-2'>
             {post.categories.map(category => (
@@ -41,7 +42,7 @@ const Post = ({ post }: Props) => {
             classes='hidden laptop:block absolute left-0 bottom-0'
             date={getFormattedDate(post.publishedAt)}
           />
-        </Link>
+        </ClientSideRoute>
       </div>
     </div>
   );

@@ -12,14 +12,14 @@ interface Post extends Base {
   categories: Category[];
   mainImage: Image;
   secondaryImages: Image[];
-  slug: string;
+  slug: Slug;
   title: string;
   subTitle: string;
   publishedAt: string;
 }
 
 interface Category extends Base {
-    _id: string;
+  _id: string;
   title: string;
 }
 
@@ -41,7 +41,7 @@ interface Reference {
   _type: 'reference';
 }
 
-// interface Slug {
-//   _type: 'slug';
-//   current: string;
-// }
+interface Slug {
+  _type: 'slug';
+  current: string;
+}
