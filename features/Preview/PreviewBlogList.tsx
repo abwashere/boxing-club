@@ -1,15 +1,19 @@
 'use client';
 
+import BlogList from '@/features/BlogList';
 import { usePreview } from '@/lib/sanity.preview';
-import BlogList from '@/features/Blog/components/BlogList';
+import MainWrapper from '@/features/MainWrapper';
 
 type Props = { query: string };
 
 const PreviewBlogList = ({ query }: Props) => {
   const posts = usePreview(null, query);
-  console.log('PREVIEW bloglist', posts.length);
 
-  return <BlogList posts={posts} />;
+  return (
+    <MainWrapper>
+      <BlogList posts={posts} />
+    </MainWrapper>
+  );
 };
 
 export default PreviewBlogList;

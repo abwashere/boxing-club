@@ -23,6 +23,7 @@ module.exports = {
         'gray-light': colors.neutral['50'],
         gray: colors.neutral['400'],
         'gray-dark': colors.neutral['800'],
+        'gray-shadow': colors.neutral['900'],
         yellow: colors.yellow['400'],
         green: colors.emerald['700'],
         orange: colors.orange['400'],
@@ -38,5 +39,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/line-clamp')],
 };

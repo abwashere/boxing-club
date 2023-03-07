@@ -20,6 +20,7 @@ export const Preview = ({ children }: Props) => {
       }
     >
       {children}
+      <footer className='font-bold bg-red text-small'>_PREVIEW MODE_</footer>
     </PreviewSuspense>
   );
 };

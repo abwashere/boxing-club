@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import classNames from 'classnames';
 
-import Burger from '@/components/Burger';
+import Burger from '@/components/Icons/Burger';
 import HeaderLogo from './components/HeaderLogo';
 import Nav from './components/Nav';
 
@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <header
       className={classNames(
-        'sticky top-0 bg-gray-dark text-gray-light text-sm',
+        'sticky top-0 z-10 bg-gray-dark shadow-sm shadow-gray-shadow text-gray-light text-sm',
       )}
     >
       <div
