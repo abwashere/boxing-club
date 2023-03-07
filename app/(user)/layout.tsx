@@ -1,5 +1,4 @@
 import Header from '@/features/Header';
-import MainWrapper from '@/features/MainWrapper';
 import '@/styles/globals.css';
 
 export const metadata = {
@@ -18,9 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang='fr'>
-      <body>
+      <body className='bg-gray-dark'>
         <Header />
-        <MainWrapper>{children}</MainWrapper>
+        {children}
       </body>
     </html>
   );
