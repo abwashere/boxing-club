@@ -26,14 +26,14 @@ const resolveBgColor = (color: UiChipColor): string => {
 const Chip = ({ item, color = 'black' }: Props) => {
   const resolvedBgColor = resolveBgColor(color);
   return (
-    <span
+    <div
       className={classNames(
-        'rounded-full w-fit bg-gray px-1.5 text-[0.6rem] text-white',
+        'rounded-full !w-fit bg-gray px-1.5 text-[0.6rem] text-white',
         resolvedBgColor,
       )}
     >
       {item}
-    </span>
+    </div>
   );
 };
 

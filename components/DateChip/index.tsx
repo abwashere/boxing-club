@@ -12,7 +12,7 @@ const DateChip = ({ date, classes }: Props) => {
     <div
       className={classNames(
         classes,
-        'flex items-center justify-center tablet:flex-col w-[6rem] tablet:w-[5rem] py-1 tablet:py-2 font-semibold text-center text-gray-dark bg-yellow opacity-70 tablet:opacity-100',
+        'flex items-center justify-center w-fit tablet:flex-col p-1 font-semibold text-center text-gray-dark bg-yellow opacity-70 tablet:opacity-100',
       )}
     >
       <div>
