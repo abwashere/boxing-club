@@ -15,7 +15,7 @@
 
 @layer base {
     body {
-        @apply font-sans text-xs tablet:text-sm text-gray-light
+        @apply font-sans text-xs tablet:text-sm text-white
     }
 
     h1 {

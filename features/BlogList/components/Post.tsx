@@ -1,4 +1,6 @@
+import DateChip from '@/components/DateChip';
 import ArrowUpRight from '@/components/Icons/ArrowUpRight';
+import { getFormattedDate } from '@/utils/getFormattedDate';
 import getUrlFor from '@/utils/getUrlFor';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -8,16 +10,20 @@ type Props = { post: Post };
 const Post = ({ post }: Props) => {
   return (
     <div className='mb-5 tablet:shadow-lg tablet:shadow-gray-shadow laptop:rounded-xl laptop:mb-0 tablet:flex'>
-      <div className='relative flex-1 w-full h-40 mb-2 tablet:mb-0 tablet:h-72'>
+      <div className='relative flex-1 w-full mb-2 h-52 tablet:mb-0 tablet:h-72'>
         <Image
           src={getUrlFor(post.mainImage).url()}
           alt='main post image'
-          className='object-cover rounded-lg tablet:rounded-l-xl'
+          className='object-cover object-top rounded-lg tablet:rounded-r-none tablet:rounded-l-xl'
           fill
+        />
+        <DateChip
+          classes='absolute tablet:hidden left-1 top-1'
+          date={getFormattedDate(post.publishedAt)}
         />
       </div>
 
-      <div className='flex-1 p-2 border-b-2 border-gray tablet:border tablet:rounded-r-xl tablet:p-5 group'>
+      <div className='relative flex-1 p-2 border-b-2 border-neutral-700 tablet:border tablet:rounded-r-xl tablet:p-5 group'>
         <Link href='/url-a-ajouter'>
           <h2 className='mb-2'>{post.title}</h2>
           {/* <div>
@@ -37,9 +43,13 @@ const Post = ({ post }: Props) => {
           </p>
           <div className='flex items-center'>
             <span className='mr-1 font-bold text-gray'>Lire l'article</span>
-            <ArrowUpRight classes='text-yellow h-2.5 w-2.5 group-hover:animate-bounce' />
+            <ArrowUpRight classes='text-yellow h-2 w-2 group-hover:animate-bounce' />
           </div>
-          {/*TODO: <div>{post.body[0]}</div> */}
+          {/*TODO: <div>{post.body[0]}</div> */}{' '}
+          <DateChip
+            classes='hidden tablet:block absolute left-0 bottom-0'
+            date={getFormattedDate(post.publishedAt)}
+          />
         </Link>
       </div>
     </div>

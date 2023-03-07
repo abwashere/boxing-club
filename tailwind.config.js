@@ -19,8 +19,8 @@ module.exports = {
       // Same colors used in the Sanity Studio
       colors: {
         black: colors.black,
-        white: colors.white,
-        'gray-light': colors.neutral['50'],
+        white: colors.neutral['50'],
+        'gray-light': colors.neutral['700'],
         gray: colors.neutral['400'],
         'gray-dark': colors.neutral['800'],
         'gray-shadow': colors.neutral['900'],

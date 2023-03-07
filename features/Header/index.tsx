@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <header
       className={classNames(
-        'sticky top-0 z-10 bg-gray-dark shadow-sm shadow-gray-shadow text-gray-light text-sm',
+        'sticky top-0 z-10 bg-gray-dark shadow-sm shadow-gray-shadow text-sm',
       )}
     >
       <div
