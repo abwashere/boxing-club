@@ -19,12 +19,15 @@ const MainWrapper = ({
         'px-2 mx-auto mt-5 desktop:px-0',
         { 'bg-transparent': bgColor === 'transparent' },
         { 'bg-white': bgColor === 'white' },
-        { 'tablet:max-w-xl laptop:max-w-tablet laptop-lg:max-w-laptop ': isArticle },
+        {
+          'tablet:max-w-xl laptop:max-w-tablet laptop-lg:max-w-laptop ':
+            isArticle,
+        },
         { 'laptop-lg:max-w-laptop-lg': !isArticle },
       )}
     >
-      {backButton}
       {children}
+      <div className='flex justify-end'>{backButton}</div>
     </main>
   );
 };

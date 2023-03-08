@@ -72,9 +72,9 @@ const PostPage = async ({ params: { slug } }: Props) => {
       <div className='w-full px-2 py-4 tablet:hidden'>
         <PageTitle title={title} />
       </div>
-      <div className='flex justify-end w-full'>
+      <div>
         <DateChip
-          classes='w-fit p -2 !bg-opacity-100'
+          classes='w-fit p-2 !bg-opacity-100'
           date={getFormattedDate(publishedAt)}
         />
       </div>
