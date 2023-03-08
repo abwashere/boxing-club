@@ -19,9 +19,15 @@ const Post = ({ post }: Props) => {
         />
       </div>
 
-      <div className='relative p-2 border-b-2 laptop:w-1/2 tablet:border-b-0 border-neutral-700 laptop:border laptop:rounded-r-xl laptop:p-4 group'>
+      <div className='p-2 border-b-2 laptop:w-1/2 tablet:border-b-0 border-neutral-700 laptop:border laptop:rounded-r-xl laptop:p-4 group'>
         <ClientSideRoute route={`${actusUrl}/${post.slug.current}`}>
-          <h2 className='mb-2'>{post.title}</h2>
+          <div className='flex justify-between'>
+            <h2 className='mb-2'>{post.title}</h2>
+            <DateChip
+              classes='hidden laptop:block laptop:ml-4 laptop:-mr-4'
+              date={getFormattedDate(post.publishedAt)}
+            />
+          </div>
           <div className='flex flex-wrap mb-2 gap-x-2 gap-y-1'>
             {post.categories.map(category => (
               <Chip key={category._id} item={category.title} color='gray' />
@@ -38,10 +44,6 @@ const Post = ({ post }: Props) => {
             <span className='mr-1 font-bold text-yellow'>Lire la suite</span>
             <ArrowUpRight classes='text-yellow !h-3 !w-3 group-hover:animate-bounce' />
           </div>
-          <DateChip
-            classes='hidden laptop:block absolute right-0 bottom-0'
-            date={getFormattedDate(post.publishedAt)}
-          />
         </ClientSideRoute>
       </div>
     </div>

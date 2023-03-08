@@ -1,5 +1,4 @@
 import classNames from 'classnames';
-import React from 'react';
 
 type Props = { date: string; classes: string };
 
@@ -12,7 +11,7 @@ const DateChip = ({ date, classes }: Props) => {
     <div
       className={classNames(
         classes,
-        'flex items-center justify-center w-fit tablet:flex-col p-1 font-semibold text-center text-gray-dark bg-yellow opacity-70 tablet:opacity-100',
+        'flex items-center justify-center min-w-fit h-fit tablet:flex-col p-1 font-semibold text-center text-gray-dark bg-yellow opacity-70 tablet:opacity-100',
       )}
     >
       <div>
