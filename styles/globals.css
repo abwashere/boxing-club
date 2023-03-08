@@ -8,26 +8,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,100;8..144,400;8..144,600&display=swap');
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 @layer base {
-    body {
-        @apply font-sans text-xs tablet:text-sm text-white
-    }
+  body {
+    @apply font-sans text-xs tablet:text-sm text-white
+  }
 
-    h1 {
-        @apply text-xl tablet:text-3xl font-bold
-    }
+  h1 {
+    @apply text-xl tablet:text-3xl font-bold
+  }
 
-    h2 {
-        @apply text-lg tablet:text-xl font-bold
-    }
+  h2 {
+    @apply text-lg tablet:text-xl font-bold
+  }
 
-    h3 {
-        @apply text-base tablet:text-lg font-bold
-    }
+  h3 {
+    @apply text-base tablet:text-lg font-bold text-gray-light
+  }
+
+  h4 {
+    @apply text-sm tablet:text-lg text-gray-light
+  }
 
 }

@@ -14,7 +14,7 @@ interface Post extends Base {
   secondaryImages: Image[];
   slug: Slug;
   title: string;
-  subTitle: string;
+  subtitle: Block[];
   publishedAt: string;
 }
 

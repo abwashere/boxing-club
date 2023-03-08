@@ -9,6 +9,7 @@ const backgroundColors = {
   yellow: 'bg-yellow',
   white: 'bg-white',
   black: 'bg-black',
+  transparent: 'bg-transparent',
 };
 
 const resolveBgColor = (color: UiColor): string => {

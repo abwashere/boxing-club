@@ -6,7 +6,7 @@ type Props = {
 };
 
 const Logo = ({ small }: Props) => {
-  return <Image width={small ? 150 : 200} alt='logo' src={LogoVBC} />;
+  return <Image width={small ? 150 : 200} alt='logo' src={LogoVBC} priority />;
 };
 
 export default Logo;

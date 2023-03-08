@@ -35,6 +35,8 @@ module.exports = {
       },
       screens: myBreakpoints,
       maxWidth: {
+        'tablet': myBreakpoints['tablet'],
+        'laptop': myBreakpoints['laptop'],
         'laptop-lg': myBreakpoints['laptop-lg'],
       },
     },

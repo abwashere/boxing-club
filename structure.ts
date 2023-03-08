@@ -1,8 +1,8 @@
 import Iframe from 'sanity-plugin-iframe-pane';
 import type { DefaultDocumentNodeResolver } from 'sanity/desk';
 
-/* 
-SANITY STUIDO PREVIEW PANEL
+/*
+SANITY STUDIO PREVIEW PANEL
 */
 
 function getPreviewUrl() {

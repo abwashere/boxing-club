@@ -1,5 +1,5 @@
 import getUrlFor from '@/utils/getUrlFor';
-import { PortableText, PortableTextComponents } from '@portabletext/react';
+import { PortableTextComponents } from '@portabletext/react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -15,17 +15,17 @@ export const RichTextComponents: PortableTextComponents = {
     ), // TODO: change
   },
   block: {
-    h1: ({ children }) => <h1 className=''>{children}</h1>,
-    h2: ({ children }) => <h2 className=''>{children}</h2>,
-    h3: ({ children }) => <h3 className=''>{children}</h3>,
-    h4: ({ children }) => <h4 className=''>{children}</h4>,
+    h1: ({ children }) => <h1 className='mb-4'>{children}</h1>,
+    h2: ({ children }) => <h2 className='mb-4'>{children}</h2>,
+    h3: ({ children }) => <h3 className='mb-4'>{children}</h3>,
+    h4: ({ children }) => <h4 className='mb-4'>{children}</h4>,
     blockquote: ({ children }) => (
-      <blockquote className='border-l-purple-500'>{children}</blockquote>
+      <blockquote className='border-l-yellow'>{children}</blockquote>
     ), // TODO: change
   },
   list: {
-    bullet: ({ children }) => <ul className='mt-xl'>{children}</ul>,
-    number: ({ children }) => <ol className='mt-lg'>{children}</ol>,
+    bullet: ({ children }) => <ul className='mt-4'>{children}</ul>,
+    number: ({ children }) => <ol className='mt-4'>{children}</ol>,
     checkmarks: ({ children }) => (
       <ol className='m-auto text-lg'>{children}</ol>
     ),

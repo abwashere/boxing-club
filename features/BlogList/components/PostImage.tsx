@@ -4,65 +4,43 @@ import Image from 'next/image';
 
 type Props = {
   cdnImage: Image;
-  // isCustom?: boolean;
-  // isMain?: boolean;
-  w?: number;
-  h?: number;
+  isArticleImage?: boolean;
+  smallDeviceWidth?: number;
+  smallDeviceHeight?: number;
 };
 
-const imageClassNames =
+const imageRoundedClassNames =
   'object-cover rounded-lg tablet:rounded-none tablet:!rounded-t-xl laptop:!rounded-l-xl laptop:!rounded-r-none';
-/* 
-const resolveCustomImage = (image: Image, isMain: boolean) => {
-  return (
-    <>
-      <img
-        src={getUrlFor(image).fit('crop').size(768, 300).url()}
-        alt='main post image'
-        className={classNames(imageClassNames, 'tablet:hidden')}
-      />
-      <img
-        src={getUrlFor(image).fit('crop').size(768, 300).url()}
-        alt='main post image'
-        className={classNames(imageClassNames, 'tablet:hidden')}
-      />
-    </>
-  );
-};
- */
+const imageSquaredClassNames = 'object-contain';
+
 const PostImage = ({
   cdnImage,
-  // isCustom,
-  // isMain = false,
-  w = 768,
-  h = 300,
+  isArticleImage,
+  smallDeviceWidth = 768,
+  smallDeviceHeight = 300,
 }: Props) => {
   return (
     <>
-      {/* {isCustom ? (
-        <img
-          src={getUrlFor(cdnImage).fit('crop').size(768, 300).url()}
-          alt='main post image'
-          className={classNames(imageClassNames, 'tablet:hidden')}
-        />
-      ) : ( */}
-        <>
-          {/* Mobile */}
-          <img
-            src={getUrlFor(cdnImage).fit('crop').size(w, h).url()}
-            alt='main post image'
-            className={classNames(imageClassNames, 'tablet:hidden')}
-          />
+      {/* Mobile */}
+      <img
+        src={getUrlFor(cdnImage)
+          .fit('crop')
+          .size(smallDeviceWidth, smallDeviceHeight)
+          .url()}
+        alt='main post image'
+        className={classNames(imageRoundedClassNames, 'tablet:hidden')}
+      />
 
-          {/* Tablet ... */}
-          <Image
-            src={getUrlFor(cdnImage).url()}
-            alt='main post image'
-            className={classNames(imageClassNames, 'hidden tablet:block')}
-            fill
-          />
-        </>
-      {/* )} */}
+      {/* Tablet ... */}
+      <Image
+        src={getUrlFor(cdnImage).url()}
+        alt='main post image'
+        className={classNames(
+          isArticleImage ? imageSquaredClassNames : imageRoundedClassNames,
+          'hidden tablet:block',
+        )}
+        fill
+      />
     </>
   );
 };
