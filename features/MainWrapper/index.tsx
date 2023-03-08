@@ -1,11 +1,16 @@
 import classNames from 'classnames';
 
 type Props = {
-  children: React.ReactNode;
   bgColor?: 'white' | 'transparent';
+  backButton: React.ReactNode;
+  children: React.ReactNode;
 };
 
-const MainWrapper = ({ children, bgColor = 'transparent' }: Props) => {
+const MainWrapper = ({
+  children,
+  bgColor = 'transparent',
+  backButton,
+}: Props) => {
   return (
     <main
       className={classNames(
@@ -14,6 +19,7 @@ const MainWrapper = ({ children, bgColor = 'transparent' }: Props) => {
         { 'bg-white': bgColor === 'white' },
       )}
     >
+      {backButton}
       {children}
     </main>
   );

@@ -20,8 +20,8 @@ module.exports = {
       colors: {
         black: colors.black,
         white: colors.neutral['50'],
-        'gray-light': colors.neutral['700'],
-        gray: colors.neutral['400'],
+        'gray-light': colors.neutral['400'],
+        gray: colors.neutral['700'],
         'gray-dark': colors.neutral['800'],
         'gray-shadow': colors.neutral['900'],
         yellow: colors.yellow['400'],

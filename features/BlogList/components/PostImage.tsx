@@ -4,28 +4,65 @@ import Image from 'next/image';
 
 type Props = {
   cdnImage: Image;
+  // isCustom?: boolean;
+  // isMain?: boolean;
+  w?: number;
+  h?: number;
 };
 
 const imageClassNames =
   'object-cover rounded-lg tablet:rounded-none tablet:!rounded-t-xl laptop:!rounded-l-xl laptop:!rounded-r-none';
-
-const PostImage = ({ cdnImage }: Props) => {
+/* 
+const resolveCustomImage = (image: Image, isMain: boolean) => {
   return (
     <>
-      {/* Mobile */}
       <img
-        src={getUrlFor(cdnImage).fit('crop').size(768, 300).url()}
+        src={getUrlFor(image).fit('crop').size(768, 300).url()}
         alt='main post image'
         className={classNames(imageClassNames, 'tablet:hidden')}
       />
-
-      {/* Tablet ... */}
-      <Image
-        src={getUrlFor(cdnImage).url()}
+      <img
+        src={getUrlFor(image).fit('crop').size(768, 300).url()}
         alt='main post image'
-        className={classNames(imageClassNames, 'hidden tablet:block')}
-        fill
+        className={classNames(imageClassNames, 'tablet:hidden')}
       />
+    </>
+  );
+};
+ */
+const PostImage = ({
+  cdnImage,
+  // isCustom,
+  // isMain = false,
+  w = 768,
+  h = 300,
+}: Props) => {
+  return (
+    <>
+      {/* {isCustom ? (
+        <img
+          src={getUrlFor(cdnImage).fit('crop').size(768, 300).url()}
+          alt='main post image'
+          className={classNames(imageClassNames, 'tablet:hidden')}
+        />
+      ) : ( */}
+        <>
+          {/* Mobile */}
+          <img
+            src={getUrlFor(cdnImage).fit('crop').size(w, h).url()}
+            alt='main post image'
+            className={classNames(imageClassNames, 'tablet:hidden')}
+          />
+
+          {/* Tablet ... */}
+          <Image
+            src={getUrlFor(cdnImage).url()}
+            alt='main post image'
+            className={classNames(imageClassNames, 'hidden tablet:block')}
+            fill
+          />
+        </>
+      {/* )} */}
     </>
   );
 };

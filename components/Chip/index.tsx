@@ -1,14 +1,6 @@
 import classNames from 'classnames';
 
-type Props = { item: string; color?: UiChipColor };
-
-type UiChipColor =
-  | 'gray'
-  | 'gray-light'
-  | 'gray-dark'
-  | 'yellow'
-  | 'white'
-  | 'black';
+type Props = { item: string; color?: UiColor };
 
 const backgroundColors = {
   gray: 'bg-gray',
@@ -19,7 +11,7 @@ const backgroundColors = {
   black: 'bg-black',
 };
 
-const resolveBgColor = (color: UiChipColor): string => {
+const resolveBgColor = (color: UiColor): string => {
   return backgroundColors[color];
 };
 

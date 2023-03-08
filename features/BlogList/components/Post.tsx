@@ -14,7 +14,7 @@ const Post = ({ post }: Props) => {
       <div className='relative mb-2 laptop:w-1/2 tablet:h-72 tablet:mb-0'>
         <PostImage cdnImage={post.mainImage} />
         <DateChip
-          classes='absolute laptop:hidden left-1 top-1'
+          classes='absolute laptop:hidden left-1 bottom-1'
           date={getFormattedDate(post.publishedAt)}
         />
       </div>

@@ -11,7 +11,8 @@ const DateChip = ({ date, classes }: Props) => {
     <div
       className={classNames(
         classes,
-        'flex items-center justify-center min-w-fit h-fit tablet:flex-col p-1 font-semibold text-center text-gray-dark bg-yellow opacity-70 tablet:opacity-100',
+        'flex items-center justify-center min-w-fit h-fit p-1 font-bold text-center text-xs text-gray-dark bg-yellow bg-opacity-70',
+        'tablet:flex-col tablet:bg-opacity-100',
       )}
     >
       <div>

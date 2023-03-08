@@ -45,3 +45,12 @@ interface Slug {
   _type: 'slug';
   current: string;
 }
+
+type UiColor =
+  | 'gray'
+  | 'gray-light'
+  | 'gray-dark'
+  | 'yellow'
+  | 'white'
+  | 'black'
+  | 'transparent';
