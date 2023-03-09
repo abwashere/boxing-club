@@ -16,14 +16,14 @@ const MainWrapper = ({
   return (
     <main
       className={classNames(
-        'px-2 mx-auto mt-5 desktop:px-0',
+        'pt-10 px-1',
+        { 'tablet:px-4 laptop:px-8 laptop-lg:px-20 desktop:px-32': !isArticle },
+        {
+          'tablet:px-8 laptop:px-[20%]':
+          isArticle,
+        },
         { 'bg-transparent': bgColor === 'transparent' },
         { 'bg-white': bgColor === 'white' },
-        {
-          'tablet:max-w-xl laptop:max-w-tablet laptop-lg:max-w-laptop ':
-            isArticle,
-        },
-        { 'laptop-lg:max-w-laptop-lg': !isArticle },
       )}
     >
       {children}

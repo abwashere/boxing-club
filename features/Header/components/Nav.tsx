@@ -19,7 +19,7 @@ const Nav = () => {
   const hoverItemClasses = 'hover:border-b-2 border-yellow';
 
   return (
-    <div className='flex-col tablet:flex tablet:flex-row tablet:gap-4 laptop:gap-8'>
+    <div className='flex flex-col tablet:flex-row tablet:items-center tablet:gap-4 laptop:gap-8'>
       <div
         className={classNames(navLinkClassNames, 'tablet:relative')}
         onTouchStart={() => setIsClubMenuOpen(!isClubMenuOpen)}
