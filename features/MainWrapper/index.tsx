@@ -4,30 +4,38 @@ type Props = {
   bgColor?: 'white' | 'transparent';
   backButton?: React.ReactNode;
   isArticle?: boolean;
+  isHomePage?: boolean;
+  extraClassNames?: string;
   children: React.ReactNode;
 };
 
 const MainWrapper = ({
   children,
   isArticle = false,
+  isHomePage = false,
   bgColor = 'transparent',
   backButton,
+  extraClassNames,
 }: Props) => {
   return (
     <main
       className={classNames(
-        'pt-10 px-1',
-        { 'tablet:px-4 laptop:px-8 laptop-lg:px-20 desktop:px-32': !isArticle },
+        extraClassNames,
+        'pt-10',
+        { '!px-0': isHomePage },
         {
-          'tablet:px-8 laptop:px-[20%]':
-          isArticle,
+          'px-1 tablet:px-4 laptop:px-8 laptop-lg:px-20 desktop:px-32':
+            !isArticle,
+        },
+        {
+          'px-1 tablet:px-8 laptop:px-[20%]': isArticle,
         },
         { 'bg-transparent': bgColor === 'transparent' },
         { 'bg-white': bgColor === 'white' },
       )}
     >
       {children}
-      <div className='flex justify-end'>{backButton}</div>
+      {backButton && <div className='flex justify-end'>{backButton}</div>}
     </main>
   );
 };

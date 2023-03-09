@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 
-type Props = { classes?: string };
+type Props = { extraClassNames?: string };
 
-const ChevronRight = ({ classes }: Props) => {
+const ChevronRight = ({ extraClassNames }: Props) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -10,7 +10,7 @@ const ChevronRight = ({ classes }: Props) => {
       viewBox='0 0 24 24'
       strokeWidth='1.5'
       stroke='currentColor'
-      className={classNames(classes, 'w-6 h-6')}
+      className={classNames(extraClassNames, 'w-6 h-6')}
     >
       <path
         strokeLinecap='round'

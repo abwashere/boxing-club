@@ -33,7 +33,7 @@ const Nav = () => {
         </div>
         <CollapsableMenu
           items={clubMenuItems}
-          classes={classNames(
+          extraClassNames={classNames(
             'tablet:block tablet:absolute tablet:-right-4 tablet:w-48',
             { hidden: !isClubMenuOpen },
           )}
@@ -63,7 +63,7 @@ const Nav = () => {
         </div>
         <CollapsableMenu
           items={galleryMenuItems}
-          classes={classNames(
+          extraClassNames={classNames(
             'tablet:block tablet:absolute tablet:-right-4 tablet:w-24',
             { hidden: !isGalleryMenuOpen },
           )}

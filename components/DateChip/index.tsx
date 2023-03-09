@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 
-type Props = { date: string; classes: string };
+type Props = { date: string; extraClassNames: string };
 
-const DateChip = ({ date, classes }: Props) => {
+const DateChip = ({ date, extraClassNames }: Props) => {
   const dateArr = date.split(' ');
   const day = dateArr[0];
   const month = dateArr[1];
@@ -10,7 +10,7 @@ const DateChip = ({ date, classes }: Props) => {
   return (
     <div
       className={classNames(
-        classes,
+        extraClassNames,
         'flex items-center justify-center min-w-fit h-fit p-1 font-bold text-center text-xs text-gray-dark bg-yellow bg-opacity-70',
         'tablet:flex-col tablet:bg-opacity-100',
       )}

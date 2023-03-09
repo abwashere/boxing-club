@@ -6,6 +6,13 @@ type base = {
   _updatedAt: string;
 };
 
+interface HeroSection extends Base {
+  _id: string;
+  title: string;
+  subtitle: string;
+  heroGallery: Gallery;
+}
+
 interface Post extends Base {
   _id: string;
   body: Block[];
@@ -31,10 +38,29 @@ interface Block extends Base {
   style: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'blockquote';
 }
 
+interface Gallery {
+  _type: 'gallery';
+  images: Image[];
+  display: string;
+  zoom: boolean;
+}
+
 interface Image {
   _type: 'image';
   asset: 'reference';
+  alt: string;
+  focus: ImagePosition;
 }
+
+type ImagePosition =
+  | 'left'
+  | 'center'
+  | 'right'
+  | 'top'
+  | 'left-top'
+  | 'right-top'
+  | 'bottom'
+  | 'left-bottom';
 
 interface Reference {
   _ref: string;

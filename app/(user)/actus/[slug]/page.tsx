@@ -3,7 +3,7 @@ import Chip from '@/components/Chip';
 import DateChip from '@/components/DateChip';
 import Loader from '@/components/Loader';
 import PageTitle from '@/components/PageTitle';
-import { RichTextComponents } from '@/components/RichTextComponents';
+import { RichTextComponents } from '@/components/PortableTextComponents';
 import PostImage from '@/features/BlogList/components/PostImage';
 import MainWrapper from '@/features/MainWrapper';
 import { client } from '@/lib/sanity.client';
@@ -74,7 +74,7 @@ const PostPage = async ({ params: { slug } }: Props) => {
       </div>
       <div>
         <DateChip
-          classes='w-fit p-2 !bg-opacity-100'
+          extraClassNames='w-fit p-2 !bg-opacity-100'
           date={getFormattedDate(publishedAt)}
         />
       </div>

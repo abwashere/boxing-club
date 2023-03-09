@@ -9,10 +9,10 @@ export const RichTextComponents: PortableTextComponents = {
       <Image
         className='object-contain'
         src={getUrlFor(value).url()}
-        alt='Post image'
+        alt={value.alt || `${value.type} image`}
         fill
       />
-    ), // TODO: change
+    ),
   },
   block: {
     h1: ({ children }) => <h1 className='mb-4'>{children}</h1>,
@@ -20,8 +20,8 @@ export const RichTextComponents: PortableTextComponents = {
     h3: ({ children }) => <h3 className='mb-4'>{children}</h3>,
     h4: ({ children }) => <h4 className='mb-4'>{children}</h4>,
     blockquote: ({ children }) => (
-      <blockquote className='border-l-yellow'>{children}</blockquote>
-    ), // TODO: change
+      <blockquote className='italic border-l-yellow'>{children}</blockquote>
+    ),
   },
   list: {
     bullet: ({ children }) => <ul className='mt-4'>{children}</ul>,
@@ -31,10 +31,7 @@ export const RichTextComponents: PortableTextComponents = {
     ),
   },
   listItem: {
-    bullet: ({ children }) => (
-      <li style={{ listStyleType: 'disclosure-closed' }}>{children}</li>
-    ),
-    // rendering custom list items
+    bullet: ({ children }) => <li>- {children}</li>,
     checkmarks: ({ children }) => <li>✅ {children}</li>,
   },
   marks: {

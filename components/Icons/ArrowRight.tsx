@@ -1,14 +1,14 @@
 import classNames from 'classnames';
 
-type Props = { classes?: string };
+type Props = { extraClassNames?: string };
 
-const ArrowRight = ({ classes }: Props) => {
+const ArrowRight = ({ extraClassNames }: Props) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
       viewBox='0 0 24 24'
       fill='currentColor'
-      className={classNames(classes, 'w-6 h-6')}
+      className={classNames(extraClassNames, 'w-6 h-6')}
     >
       <path
         fillRule='evenodd'

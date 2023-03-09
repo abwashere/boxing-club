@@ -11,12 +11,10 @@ const query = groq`
   *[_type=='post']{
       ...,
       categories[]->,
-      body->,
-      secondaryImages->
   } | order(publishedAt desc)
 `;
 
-const ActusPage = async () => {
+export default async function ActusPage() {
   if (previewData()) {
     return (
       <PreviewSuspense>
@@ -33,6 +31,4 @@ const ActusPage = async () => {
       <BlogList posts={posts} />
     </MainWrapper>
   );
-};
-
-export default ActusPage;
+}

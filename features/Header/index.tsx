@@ -14,9 +14,8 @@ const Header = () => {
       className={classNames(
         'flex flex-row-reverse justify-between items-start',
         'tablet:flex-row tablet:items-center',
-        'py-2 px-1 tablet:px-4 laptop:px-8 laptop-lg:px-20 desktop:px-32',
+        'py-2 tablet:py-8 px-1 tablet:px-4 laptop:px-8 laptop-lg:px-20 desktop:px-32',
         'bg-transparent shadow-sm text-sm',
-        // 'sticky top-0 z-10 bg-gray-dark shadow-sm shadow-gray-shadow text-sm',
       )}
     >
       <HeaderLogo />

@@ -17,11 +17,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang='fr'>
-      <body className='bg-gray-dark'>
-        <Header />
+      <body className='relative bg-gray-dark'>
+        <div className='absolute top-0 z-20 w-full'>
+          <Header />
+        </div>
         {children}
+        <footer className='h-32'></footer>
       </body>
-      <footer className="h-32"></footer>
     </html>
   );
 }

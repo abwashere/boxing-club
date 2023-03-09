@@ -4,21 +4,21 @@ import classNames from 'classnames';
 
 type Props = {
   items: TNavLink[];
-  classes: string;
+  extraClassNames: string;
   hoverItemClasses: string;
   isOpen: boolean;
 };
 
 const CollapsableMenu = ({
   items,
-  classes,
+  extraClassNames,
   hoverItemClasses,
   isOpen,
 }: Props) => {
   return (
     <ul
       className={classNames(
-        classes,
+        extraClassNames,
         'top-100 rounded w-full tablet:px-4 tablet:py-2 tablet:text-right',
         'tablet:shadow-xl shadow-neutral-100 bg-gray-dark',
         'transition-transform scale-y-0 duration-500 origin-top',
