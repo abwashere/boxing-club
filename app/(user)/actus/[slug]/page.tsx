@@ -79,11 +79,10 @@ const PostPage = async ({ params: { slug } }: Props) => {
         />
       </div>
       <div className='relative mt-2'>
-        <div className='tablet:min-h-[500px] laptop-lg:min-h-[700px]'>
+        <div className='relative h-52 tablet:min-h-[500px] laptop-lg:min-h-[700px]'>
           <PostImage
             isArticleImage
             cdnImage={mainImage}
-            smallDeviceHeight={800}
           />
         </div>
         <div className='absolute bottom-0 hidden w-full px-2 py-4 rounded-b-lg tablet:block tablet:rounded-none bg-opacity-60 bg-gray'>
@@ -100,7 +99,7 @@ const PostPage = async ({ params: { slug } }: Props) => {
           <PortableText value={subtitle} components={RichTextComponents} />
         </div>
       )}
-      <div>
+      <div className='mb-8'>
         <PortableText value={body} components={RichTextComponents} />
       </div>
     </MainWrapper>

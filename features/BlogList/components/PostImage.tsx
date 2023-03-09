@@ -1,47 +1,37 @@
 import getUrlFor from '@/utils/getUrlFor';
+import resolveImagePosition from '@/utils/resolveImagePosition';
 import classNames from 'classnames';
 import Image from 'next/image';
 
 type Props = {
   cdnImage: Image;
   isArticleImage?: boolean;
-  smallDeviceWidth?: number;
-  smallDeviceHeight?: number;
 };
 
-const imageRoundedClassNames =
-  'object-cover rounded-lg tablet:rounded-none tablet:!rounded-t-xl laptop:!rounded-l-xl laptop:!rounded-r-none';
-const imageSquaredClassNames = 'object-contain';
+const PostImage = ({ cdnImage, isArticleImage }: Props) => {
+  const resolvedImagePosition = resolveImagePosition(cdnImage);
 
-const PostImage = ({
-  cdnImage,
-  isArticleImage,
-  smallDeviceWidth = 768,
-  smallDeviceHeight = 300,
-}: Props) => {
   return (
-    <>
-      {/* Mobile */}
-      <img
-        src={getUrlFor(cdnImage)
-          .fit('crop')
-          .size(smallDeviceWidth, smallDeviceHeight)
-          .url()}
-        alt='main post image'
-        className={classNames(imageRoundedClassNames, 'tablet:hidden')}
-      />
-
-      {/* Tablet ... */}
-      <Image
-        src={getUrlFor(cdnImage).url()}
-        alt='main post image'
-        className={classNames(
-          isArticleImage ? imageSquaredClassNames : imageRoundedClassNames,
-          'hidden tablet:block',
-        )}
-        fill
-      />
-    </>
+    <Image
+      src={getUrlFor(cdnImage).url()}
+      alt={cdnImage.alt || "Image principale de l'article"}
+      className={classNames(
+        'object-cover rounded-lg tablet:rounded-b-none',
+        {
+          'laptop:rounded-l-xl laptop:rounded-r-none': !isArticleImage,
+        },
+        { 'rounded-t-xl': isArticleImage },
+        resolvedImagePosition,
+      )}
+      fill
+      // https://nextjs.org/docs/api-reference/next/image#sizes
+      sizes={
+        isArticleImage
+          ? '(max-width: 768px) 99vw, (max-width: 1200px) 48vw, 30vw'
+          : '(max-width: 390px) 99vw, (max-width: 768px) 48vw, 30vw'
+      }
+      priority={true}
+    />
   );
 };
 

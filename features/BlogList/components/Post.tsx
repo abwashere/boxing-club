@@ -13,7 +13,7 @@ type Props = { post: Post };
 const Post = ({ post }: Props) => {
   return (
     <div className='mb-5 tablet:shadow-lg tablet:shadow-gray-shadow laptop:rounded-xl laptop:mb-0 laptop:flex'>
-      <div className='relative mb-2 laptop:w-1/2 tablet:h-72 tablet:mb-0'>
+      <div className='relative mb-2 laptop:w-1/2 h-52 tablet:h-72 tablet:mb-0'>
         <PostImage cdnImage={post.mainImage} />
         <DateChip
           extraClassNames='absolute laptop:hidden left-1 bottom-1'

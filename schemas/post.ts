@@ -31,6 +31,19 @@ export default defineType({
       options: {
         hotspot: true,
       },
+      fields: [
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Alternative text',
+        },
+        {
+          name: 'focus',
+          type: 'string',
+          title: 'Focus',
+          description: 'Object position',
+        },
+      ],
     }),
     defineField({
       name: 'secondaryImages',
@@ -42,6 +55,19 @@ export default defineType({
           options: {
             hotspot: true,
           },
+          fields: [
+            {
+              name: 'alt',
+              type: 'string',
+              title: 'Alternative text',
+            },
+            {
+              name: 'focus',
+              type: 'string',
+              title: 'Focus',
+              description: 'Object position',
+            },
+          ],
         },
       ],
     }),
