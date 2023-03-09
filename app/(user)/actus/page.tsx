@@ -1,6 +1,6 @@
 import PageTitle from '@/components/PageTitle';
 import BlogList from '@/features/BlogList';
-import MainWrapper from '@/features/MainWrapper';
+import MainWrapper from '@/components/MainWrapper';
 import PreviewBlogList from '@/features/Preview/PreviewBlogList';
 import { Preview as PreviewSuspense } from '@/features/Preview/PreviewSuspense';
 import { client } from '@/lib/sanity.client';

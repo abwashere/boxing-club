@@ -5,7 +5,7 @@ import Loader from '@/components/Loader';
 import PageTitle from '@/components/PageTitle';
 import { RichTextComponents } from '@/components/PortableTextComponents';
 import PostImage from '@/features/BlogList/components/PostImage';
-import MainWrapper from '@/features/MainWrapper';
+import MainWrapper from '@/components/MainWrapper';
 import { client } from '@/lib/sanity.client';
 import { getFormattedDate } from '@/utils/getFormattedDate';
 import { PortableText } from '@portabletext/react';

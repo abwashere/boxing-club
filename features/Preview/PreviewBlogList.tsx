@@ -2,7 +2,7 @@
 
 import BlogList from '@/features/BlogList';
 import { usePreview } from '@/lib/sanity.preview';
-import MainWrapper from '@/features/MainWrapper';
+import MainWrapper from '@/components/MainWrapper';
 
 type Props = { query: string };
 
