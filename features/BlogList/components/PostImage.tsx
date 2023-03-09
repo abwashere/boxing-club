@@ -6,9 +6,10 @@ import Image from 'next/image';
 type Props = {
   cdnImage: Image;
   isArticleImage?: boolean;
+  isGalleryImage?: boolean;
 };
 
-const PostImage = ({ cdnImage, isArticleImage }: Props) => {
+const PostImage = ({ cdnImage, isArticleImage, isGalleryImage }: Props) => {
   const resolvedImagePosition = resolveImagePosition(cdnImage);
 
   return (
@@ -21,6 +22,7 @@ const PostImage = ({ cdnImage, isArticleImage }: Props) => {
           'laptop:rounded-l-xl laptop:rounded-r-none': !isArticleImage,
         },
         { 'rounded-t-xl': isArticleImage },
+        { '!rounded-none': isGalleryImage },
         resolvedImagePosition,
       )}
       fill

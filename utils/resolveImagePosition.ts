@@ -10,5 +10,6 @@ const imagePositions = {
 };
 
 export default function resolveImagePosition(image: Image): string {
+  if (!image.focus) return '';
   return imagePositions[image.focus];
 }

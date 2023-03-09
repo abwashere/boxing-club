@@ -44,7 +44,6 @@ const PostPage = async ({ params: { slug } }: Props) => {
       {
         ...,
         categories[]->,
-        secondaryImages[]->,
       }
   `;
   const post: Post = await client.fetch(query, { slug });
@@ -67,6 +66,7 @@ const PostPage = async ({ params: { slug } }: Props) => {
   } = post;
 
   const backButton = <BackButton text='retour' />;
+
   return (
     <MainWrapper isArticle backButton={backButton}>
       <div className='w-full px-2 py-4 tablet:hidden'>
@@ -80,10 +80,7 @@ const PostPage = async ({ params: { slug } }: Props) => {
       </div>
       <div className='relative mt-2'>
         <div className='relative h-52 tablet:min-h-[500px] laptop-lg:min-h-[700px]'>
-          <PostImage
-            isArticleImage
-            cdnImage={mainImage}
-          />
+          <PostImage isArticleImage cdnImage={mainImage} />
         </div>
         <div className='absolute bottom-0 hidden w-full px-2 py-4 rounded-b-lg tablet:block tablet:rounded-none bg-opacity-60 bg-gray'>
           <PageTitle title={title} />
@@ -102,6 +99,15 @@ const PostPage = async ({ params: { slug } }: Props) => {
       <div className='mb-8'>
         <PortableText value={body} components={RichTextComponents} />
       </div>
+      {secondaryImages && (
+        <div>
+          {secondaryImages.map(image => (
+            <div className='relative mb-2 h-44 tablet:mb-4 tablet:h-60 laptop-lg:min-h-80'>
+              <PostImage cdnImage={image} isGalleryImage />
+            </div>
+          ))}
+        </div>
+      )}
     </MainWrapper>
   );
 };
