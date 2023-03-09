@@ -4,7 +4,6 @@ const colors = require('tailwindcss/colors');
 const myBreakpoints = {
   tablet: '768px',
   laptop: '1024px',
-  'laptop-lg': '1280px',
   desktop: '1440px',
 };
 
@@ -35,9 +34,9 @@ module.exports = {
       },
       screens: myBreakpoints,
       maxWidth: {
-        'tablet': myBreakpoints['tablet'],
-        'laptop': myBreakpoints['laptop'],
-        'laptop-lg': myBreakpoints['laptop-lg'],
+        tablet: myBreakpoints['tablet'],
+        laptop: myBreakpoints['laptop'],
+        desktop: myBreakpoints['desktop'],
       },
     },
   },

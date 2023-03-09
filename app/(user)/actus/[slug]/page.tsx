@@ -79,7 +79,7 @@ const PostPage = async ({ params: { slug } }: Props) => {
         />
       </div>
       <div className='relative mt-2'>
-        <div className='relative h-52 tablet:min-h-[500px] laptop-lg:min-h-[700px]'>
+        <div className='relative h-52 tablet:min-h-[500px]'>
           <PostImage isArticleImage cdnImage={mainImage} />
         </div>
         <div className='absolute bottom-0 hidden w-full px-2 py-4 rounded-b-lg tablet:block tablet:rounded-none bg-opacity-60 bg-gray'>
@@ -100,13 +100,22 @@ const PostPage = async ({ params: { slug } }: Props) => {
         <PortableText value={body} components={RichTextComponents} />
       </div>
       {secondaryImages && (
-        <div>
-          {secondaryImages.map(image => (
-            <div className='relative mb-2 h-44 tablet:mb-4 tablet:h-60 laptop-lg:min-h-80'>
-              <PostImage cdnImage={image} isGalleryImage />
-            </div>
-          ))}
-        </div>
+        <>
+          <hr className='mb-2 text-gray'/>
+          <p className='mb-2 text-center text-gray-light'>
+            Autres images de l'évènement
+          </p>
+          <div className='grid gap-2 mb-4 tablet:grid-cols-2'>
+            {secondaryImages.map(image => (
+              <div
+                key={image._id}
+                className='relative min-h-[200px] tablet:min-h-[400px] tablet:mb-4'
+              >
+                <PostImage cdnImage={image} isGalleryImage />
+              </div>
+            ))}
+          </div>
+        </>
       )}
     </MainWrapper>
   );

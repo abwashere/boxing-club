@@ -24,8 +24,7 @@ const MainWrapper = ({
         'pt-10',
         { '!px-0': isHomePage },
         {
-          'px-1 tablet:px-4 laptop:px-8 laptop-lg:px-20 desktop:px-32':
-            !isArticle,
+          'px-1 tablet:px-4 laptop:px-8 desktop:px-32': !isArticle,
         },
         {
           'px-1 tablet:px-8 laptop:px-[20%]': isArticle,

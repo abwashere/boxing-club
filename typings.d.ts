@@ -46,10 +46,12 @@ interface Gallery {
 }
 
 interface Image {
+  _id: string;
   _type: 'image';
   asset: 'reference';
   alt: string;
   focus: ImagePosition;
+  hotspot: Hotspot;
 }
 
 type ImagePosition =
@@ -61,6 +63,14 @@ type ImagePosition =
   | 'right-top'
   | 'bottom'
   | 'left-bottom';
+
+interface Hotspot {
+  _type: 'hotspot';
+  height: number;
+  width: number;
+  x: number;
+  y: number;
+}
 
 interface Reference {
   _ref: string;
