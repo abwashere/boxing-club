@@ -21,12 +21,15 @@ const Banner = ({ hero }: Props) => {
         alt={randomImage.alt}
         className={classNames('object-cover', resolvedImagePosition)}
         fill
+        quality={100}
       />
-      <div className='absolute top-[45%] flex flex-col justify-center w-full text-center font-bold bg-opacity-20 bg-gray py-3'>
-        <h1 className='!text-xl tablet:!text-2xl text-yellow'>{title}</h1>
-        <p className='w-2/3 m-auto text-xl leading-5 tracking-widest tablet:w-full'>
-          {subtitle}
-        </p>
+      <div className='absolute top-[45%] w-full'>
+        <div className='flex flex-col justify-center px-8 py-4 m-auto font-bold text-center bg-opacity-25 w-fit bg-gray'>
+          <h1 className='!text-xl tablet:!text-2xl text-yellow'>{title}</h1>
+          <p className='w-2/3 m-auto text-xl leading-5 tracking-widest tablet:w-full'>
+            {subtitle}
+          </p>
+        </div>
       </div>
     </div>
   );
