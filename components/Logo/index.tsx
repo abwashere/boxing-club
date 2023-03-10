@@ -1,4 +1,4 @@
-import LogoVBC from '@/assets/logo-vbc.png';
+import LogoVBC from '/public/images/logo-vbc.png';
 import Image from 'next/image';
 
 type Props = {
