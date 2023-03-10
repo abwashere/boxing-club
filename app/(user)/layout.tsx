@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='fr'>
-      <body className='relative bg-gray-dark'>
+      <body className='relative h-screen bg-gray-dark'>
         <div className='absolute top-0 z-20 w-full'>
           <Header />
         </div>

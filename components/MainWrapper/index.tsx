@@ -21,13 +21,13 @@ const MainWrapper = ({
     <main
       className={classNames(
         extraClassNames,
-        'pt-10',
+        'pt-12 tablet:pt-28',
         { '!px-0': isHomePage },
         {
           'px-1 tablet:px-4 laptop:px-8 desktop:px-32': !isArticle,
         },
         {
-          'px-1 tablet:px-8 laptop:px-[20%]': isArticle,
+          'px-1 tablet:px-4 laptop:px-[20%]': isArticle,
         },
         { 'bg-transparent': bgColor === 'transparent' },
         { 'bg-white': bgColor === 'white' },
