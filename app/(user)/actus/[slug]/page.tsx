@@ -103,7 +103,7 @@ const PostPage = async ({ params: { slug } }: Props) => {
         <>
           <hr className='mb-2 text-gray'/>
           <p className='mb-2 text-center text-gray-light'>
-            Autres images de l'évènement
+            Autres images de l&apos;évènement
           </p>
           <div className='grid gap-2 mb-4 tablet:grid-cols-2'>
             {secondaryImages.map(image => (
