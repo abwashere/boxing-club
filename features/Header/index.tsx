@@ -1,6 +1,6 @@
 'use client';
-import { useState } from 'react';
 import classNames from 'classnames';
+import { useState } from 'react';
 
 import Burger from '@/components/Icons/Burger';
 import HeaderLogo from './components/HeaderLogo';
@@ -19,10 +19,15 @@ const Header = () => {
       )}
     >
       <HeaderLogo />
-      <nav>
+      <nav
+        className={classNames({
+          'bg-gray-dark bg-opacity-80 tablet:bg-transparent p-2 rounded':
+            isMobileNavOpen,
+        })}
+      >
         <div
-          className={classNames('-ml-1 -mt-1 tablet:hidden', {
-            'mb-6': isMobileNavOpen,
+          className={classNames('-mt-2 tablet:hidden text-yellow', {
+            'mb-6 -ml-1': isMobileNavOpen,
           })}
           onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
         >

@@ -8,7 +8,7 @@ import {
   clubMenuItems,
   gallerieLink,
   galleryMenuItems,
-  inscriptionsLink,
+  inscriptionsLink
 } from '../constants';
 
 const Nav = () => {
@@ -34,7 +34,7 @@ const Nav = () => {
         <CollapsableMenu
           items={clubMenuItems}
           extraClassNames={classNames(
-            'tablet:block tablet:absolute tablet:-right-4 tablet:w-48',
+            'mt-2 tablet:block tablet:absolute tablet:-right-4 tablet:w-48',
             { hidden: !isClubMenuOpen },
           )}
           hoverItemClasses={hoverItemClasses}
@@ -64,7 +64,7 @@ const Nav = () => {
         <CollapsableMenu
           items={galleryMenuItems}
           extraClassNames={classNames(
-            'tablet:block tablet:absolute tablet:-right-4 tablet:w-24',
+            'mt-2 tablet:block tablet:absolute tablet:-right-4 tablet:w-24',
             { hidden: !isGalleryMenuOpen },
           )}
           hoverItemClasses={hoverItemClasses}
