@@ -1,6 +1,8 @@
-export const presentationUrl = '/presentation';
-export const administrationsUrl = '/administration';
-export const entraineursUrl = '/#entraineurs'; // FIXME: ancre ici ?
+export const clubUrl = '/club';
+export const presentationUrl = clubUrl + '/presentation';
+export const administrationsUrl = clubUrl + '/administration';
+export const entraineursUrl = clubUrl + '/entraineurs';
+
 export const gallerieUrl = '/gallerie';
 export const gallerieSalleUrl = gallerieUrl + '/salle';
 export const gallerieVbsUrl = gallerieUrl + '/vbs';
