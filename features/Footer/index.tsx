@@ -2,8 +2,7 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <div className='text-center text-gray'>
-      <hr className='mx-16 mb-8 text-gray' />
+    <footer className='flex flex-col justify-center w-full pb-8 text-center text-gray'>
       <p className='mb-2 laptop:mb-4'>
         Created by <br />
         <Link
@@ -35,7 +34,7 @@ const Footer = () => {
         </Link>
         &apos; website
       </p>
-    </div>
+    </footer>
   );
 };
 

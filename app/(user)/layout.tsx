@@ -1,3 +1,4 @@
+import Footer from '@/features/Footer';
 import Header from '@/features/Header';
 import '@/styles/globals.css';
 
@@ -17,12 +18,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang='fr'>
-      <body className='relative h-screen bg-gray-dark'>
+      <body className='relative flex flex-col min-h-screen justify-betweenh-screen bg-gray-dark'>
         <div className='absolute top-0 z-20 w-full'>
-          <Header />
+          <Header isTransparent />
         </div>
         {children}
-        <footer className='h-32'></footer>
+        <Footer />
       </body>
     </html>
   );

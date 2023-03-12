@@ -15,7 +15,7 @@ const Banner = ({ hero }: Props) => {
   const resolvedImagePosition = resolveImagePosition(randomImage);
 
   return (
-    <div className='relative h-[80vh] tablet:h-[90vh] w-full'>
+    <div className='relative h-[100vh] w-full'>
       <Image
         src={getUrlFor(randomImage).url()}
         alt={randomImage.alt}

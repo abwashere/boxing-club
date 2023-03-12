@@ -1,5 +1,5 @@
-import Banner from '@/features/Banner';
 import MainWrapper from '@/components/MainWrapper';
+import Banner from '@/features/Banner';
 import { client } from '@/lib/sanity.client';
 import { groq } from 'next-sanity';
 

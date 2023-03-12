@@ -21,7 +21,7 @@ const Post = ({ post }: Props) => {
         />
       </div>
 
-      <div className='p-2 border-b-2 laptop:w-1/2 tablet:border-b-0 border-neutral-700 laptop:border laptop:rounded-r-xl laptop:p-4 group'>
+      <div className='p-2 border-b laptop:w-1/2 tablet:border-b-0 border-neutral-700 laptop:border laptop:rounded-r-xl laptop:p-4 group'>
         <ClientSideRoute route={`${actusUrl}/${post.slug.current}`}>
           <div className='flex justify-between'>
             <h2 className='mb-2'>{post.title}</h2>
