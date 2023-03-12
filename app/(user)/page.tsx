@@ -1,5 +1,6 @@
 import MainWrapper from '@/components/MainWrapper';
 import Banner from '@/features/Banner';
+import Header from '@/features/Header';
 import { client } from '@/lib/sanity.client';
 import { groq } from 'next-sanity';
 
@@ -13,8 +14,11 @@ export default async function HomePage() {
   if (!heroSection) return null;
 
   return (
-    <MainWrapper isHomePage extraClassNames=' !left-0 !pt-0'>
-      <Banner hero={heroSection} />
-    </MainWrapper>
+    <>
+      <Header isHomePageHeader />
+      <MainWrapper isHomePage extraClassNames=' !left-0 !pt-0'>
+        <Banner hero={heroSection} />
+      </MainWrapper>
+    </>
   );
 }

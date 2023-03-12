@@ -1,5 +1,4 @@
 import Footer from '@/features/Footer';
-import Header from '@/features/Header';
 import '@/styles/globals.css';
 
 export const metadata = {
@@ -19,7 +18,6 @@ export default function RootLayout({
   return (
     <html lang='fr'>
       <body className='relative flex flex-col min-h-screen justify-betweenh-screen bg-gray-dark'>
-        <Header extraClassNames='absolute top-0 z-20 w-full !bg-transparent' />
         {children}
         <Footer />
       </body>

@@ -7,10 +7,10 @@ import HeaderLogo from './components/HeaderLogo';
 import Nav from './components/Nav';
 
 type Props = {
-  extraClassNames?: string;
+  isHomePageHeader?: boolean;
 };
 
-const Header = ({ extraClassNames }: Props) => {
+const Header = ({ isHomePageHeader }: Props) => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   return (
@@ -20,7 +20,7 @@ const Header = ({ extraClassNames }: Props) => {
         'tablet:flex-row tablet:items-center',
         'py-2 tablet:py-8 px-1 tablet:px-4 laptop:px-8 desktop:px-32',
         'shadow-sm text-sm bg-gray-dark',
-        extraClassNames,
+        { 'absolute top-0 z-20 w-full !bg-transparent': isHomePageHeader },
       )}
     >
       <HeaderLogo />

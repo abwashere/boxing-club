@@ -21,7 +21,7 @@ const MainWrapper = ({
     <main
       className={classNames(
         extraClassNames,
-        'pt-8 pb-4',
+        'py-4',
         { '!px-0': isHomePage },
         {
           'px-1 tablet:px-4 laptop:px-8 desktop:px-32': !isArticle,
