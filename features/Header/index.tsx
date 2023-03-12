@@ -19,16 +19,21 @@ const Header = ({ isHomePageHeader }: Props) => {
         'flex flex-row-reverse justify-between items-start',
         'tablet:flex-row tablet:items-center',
         'py-2 tablet:py-8 px-1 tablet:px-4 laptop:px-8 desktop:px-32',
-        'shadow-sm text-sm bg-gray-dark',
+        'text-sm bg-gray-dark',
         { 'absolute top-0 z-20 w-full !bg-transparent': isHomePageHeader },
+        { relative: !isHomePageHeader },
       )}
     >
       <HeaderLogo />
       <nav
-        className={classNames({
-          'bg-gray-dark bg-opacity-80 tablet:bg-transparent p-2 rounded min-w-[50vw]':
-            isMobileNavOpen,
-        })}
+        className={classNames(
+          'drop-shadow-2xl',
+          {
+            'absolute tablet:static top-0 left-0 z-20 bg-gray-dark tablet:bg-opacity-80 p-2 rounded min-w-[50vw]':
+              isMobileNavOpen,
+          },
+          { 'bg-opacity-50': isHomePageHeader },
+        )}
       >
         <div
           className={classNames('-mt-2 tablet:hidden text-yellow', {

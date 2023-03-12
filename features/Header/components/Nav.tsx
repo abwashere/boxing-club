@@ -8,10 +8,10 @@ import {
   clubMenuItems,
   gallerieLink,
   galleryMenuItems,
-  inscriptionsLink
+  inscriptionsLink,
 } from '../constants';
 
-const Nav = () => {
+const Nav = ({ closeMobileNav }: { closeMobileNav: () => void }) => {
   const [isClubMenuOpen, setIsClubMenuOpen] = useState(false);
   const [isGalleryMenuOpen, setIsGalleryMenuOpen] = useState(false);
 
@@ -22,7 +22,6 @@ const Nav = () => {
     <div className='flex flex-col tablet:flex-row tablet:items-center tablet:gap-4 laptop:gap-8'>
       <div
         className={classNames(navLinkClassNames, 'tablet:relative')}
-        onTouchStart={() => setIsClubMenuOpen(!isClubMenuOpen)}
         onMouseEnter={() => setIsClubMenuOpen(true)}
         onMouseLeave={() => setIsClubMenuOpen(false)}
       >
@@ -42,6 +41,7 @@ const Nav = () => {
         />
       </div>
       <div
+        onClick={() => closeMobileNav()}
         className={classNames(
           navLinkClassNames,
           hoverItemClasses,
@@ -52,7 +52,6 @@ const Nav = () => {
       </div>
       <div
         className={classNames(navLinkClassNames, 'tablet:relative')}
-        onTouchStart={() => setIsGalleryMenuOpen(!isGalleryMenuOpen)}
         onMouseEnter={() => setIsGalleryMenuOpen(true)}
         onMouseLeave={() => setIsGalleryMenuOpen(false)}
       >
@@ -72,6 +71,7 @@ const Nav = () => {
         />
       </div>
       <div
+        onClick={() => closeMobileNav()}
         className={classNames(
           navLinkClassNames,
           hoverItemClasses,
