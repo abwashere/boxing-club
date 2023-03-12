@@ -7,9 +7,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <body className='h-screen bg-gray-dark'>
         <Header />
         {children}
-        <div className='flex flex-col justify-center w-full py-8'>
-          <Footer />
-        </div>
+        <Footer />
       </body>
     </html>
   );

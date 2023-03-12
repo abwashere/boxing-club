@@ -7,10 +7,10 @@ import HeaderLogo from './components/HeaderLogo';
 import Nav from './components/Nav';
 
 type Props = {
-  isTransparent?: boolean;
+  extraClassNames?: string;
 };
 
-const Header = ({ isTransparent = false }: Props) => {
+const Header = ({ extraClassNames }: Props) => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   return (
@@ -19,14 +19,14 @@ const Header = ({ isTransparent = false }: Props) => {
         'flex flex-row-reverse justify-between items-start',
         'tablet:flex-row tablet:items-center',
         'py-2 tablet:py-8 px-1 tablet:px-4 laptop:px-8 desktop:px-32',
-        'shadow-sm text-sm',
-        isTransparent ? 'bg-transparent' : 'bg-gray-dark',
+        'shadow-sm text-sm bg-gray-dark',
+        extraClassNames,
       )}
     >
       <HeaderLogo />
       <nav
         className={classNames({
-          'bg-gray-dark bg-opacity-80 tablet:bg-transparent p-2 rounded':
+          'bg-gray-dark bg-opacity-80 tablet:bg-transparent p-2 rounded min-w-[50vw]':
             isMobileNavOpen,
         })}
       >
@@ -42,7 +42,7 @@ const Header = ({ isTransparent = false }: Props) => {
         <div
           className={classNames({ hidden: !isMobileNavOpen }, 'tablet:block')}
         >
-          <Nav />
+          <Nav closeMobileNav={() => setIsMobileNavOpen(false)} />
         </div>
       </nav>
     </header>

@@ -19,9 +19,7 @@ export default function RootLayout({
   return (
     <html lang='fr'>
       <body className='relative flex flex-col min-h-screen justify-betweenh-screen bg-gray-dark'>
-        <div className='absolute top-0 z-20 w-full'>
-          <Header isTransparent />
-        </div>
+        <Header extraClassNames='absolute top-0 z-20 w-full !bg-transparent' />
         {children}
         <Footer />
       </body>
