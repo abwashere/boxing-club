@@ -8,6 +8,7 @@ type base = {
 
 interface HeroSection extends Base {
   _id: string;
+  _type: 'heroSection';
   title: string;
   subtitle: string;
   heroGallery: Gallery;
@@ -15,6 +16,7 @@ interface HeroSection extends Base {
 
 interface Post extends Base {
   _id: string;
+  _type: 'post';
   body: Block[];
   categories: Category[];
   mainImage: Image;
@@ -23,6 +25,19 @@ interface Post extends Base {
   title: string;
   subtitle: Block[];
   publishedAt: string;
+}
+
+interface Article extends Base {
+  _id: string;
+  _type: 'article';
+  slug: Slug;
+  title: string;
+  subtitle: string;
+  body: Block[];
+  section: string;
+  mainImage: Image;
+  table: any;
+  coach: Person;
 }
 
 interface Category extends Base {
@@ -43,6 +58,13 @@ interface Gallery {
   images: Image[];
   display: string;
   zoom: boolean;
+}
+
+interface Person {
+  _type: 'person';
+  name: string;
+  slug: Slug;
+  photo: Image;
 }
 
 interface Image {

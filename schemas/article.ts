@@ -9,6 +9,11 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: Rule => [
+        Rule.required(),
+        Rule.min(5).error('5 caracters min is required.'),
+        Rule.max(80).warning('Shorter titles are usually better'),
+      ],
     }),
     defineField({
       name: 'slug',
@@ -18,11 +23,12 @@ export default defineType({
         source: 'title',
         maxLength: 96,
       },
+      validation: Rule => Rule.required(),
     }),
     defineField({
       name: 'subtitle',
       title: 'Subtitle',
-      type: 'blockContent',
+      type: 'string',
     }),
     defineField({
       name: 'body',
@@ -64,11 +70,16 @@ export default defineType({
         },
       ],
     }),
-
     defineField({
       name: 'table',
       title: 'Table',
       type: 'table',
+    }),
+    defineField({
+      name: 'coach',
+      title: 'Coach',
+      type: 'reference',
+      to: { type: 'person' },
     }),
   ],
 });

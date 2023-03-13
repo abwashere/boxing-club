@@ -1,9 +1,10 @@
+import article from './article';
 import blockContent from './blockContent';
 import category from './category';
-import post from './post';
-import heroSection from './heroSection';
 import gallery from './gallery';
-import article from './article';
+import heroSection from './heroSection';
+import person from './person';
+import post from './post';
 
 export const schemaTypes = [
   post,
@@ -12,4 +13,5 @@ export const schemaTypes = [
   heroSection,
   gallery,
   article,
+  person,
 ];
