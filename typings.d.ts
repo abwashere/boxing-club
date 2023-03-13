@@ -36,8 +36,9 @@ interface Article extends Base {
   body: Block[];
   section: string;
   mainImage: Image;
+  gallery: Gallery;
   table: any;
-  coach: Person;
+  coaches: Person[];
 }
 
 interface Category extends Base {
@@ -61,9 +62,13 @@ interface Gallery {
 }
 
 interface Person {
+  _id: string;
   _type: 'person';
-  name: string;
+  fullName: string;
   slug: Slug;
+  presentation: Block;
+  subtitle: string;
+  role: string;
   photo: Image;
 }
 

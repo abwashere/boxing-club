@@ -6,9 +6,10 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'name',
-      title: 'Name',
+      name: 'fullName',
+      title: 'Full Name',
       type: 'string',
+      description: 'Prénom puis Nom avec majuscules',
       validation: Rule => Rule.required(),
     }),
     defineField({
@@ -16,9 +17,35 @@ export default defineType({
       title: 'Slug',
       type: 'slug',
       options: {
-        source: 'title',
+        source: 'fullName',
       },
       validation: Rule => Rule.required(),
+    }),
+    defineField({
+      name: 'subtitle',
+      title: 'Subtitle',
+      description: 'Nom du poste',
+      type: 'string',
+    }),
+    defineField({
+      name: 'role',
+      title: 'Role',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Coach', value: 'coach' },
+          { title: 'Manager', value: 'manager' },
+          { title: 'Préparateur physique', value: 'fitness-trainor' },
+          { title: 'Compétiteur', value: 'competitor' },
+        ],
+        // layout: 'radio', // <-- defaults to 'dropdown'
+      },
+      validation: Rule => Rule.required(),
+    }),
+    defineField({
+      name: 'presentation',
+      title: 'Presentation',
+      type: 'blockContent',
     }),
     defineField({
       name: 'photo',

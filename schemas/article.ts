@@ -71,15 +71,20 @@ export default defineType({
       ],
     }),
     defineField({
+      name: 'gallery',
+      title: 'Gallery',
+      type: 'gallery',
+    }),
+    defineField({
       name: 'table',
       title: 'Table',
       type: 'table',
     }),
     defineField({
-      name: 'coach',
-      title: 'Coach',
-      type: 'reference',
-      to: { type: 'person' },
+      name: 'coaches',
+      title: 'Coaches',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'person' } }],
     }),
   ],
 });

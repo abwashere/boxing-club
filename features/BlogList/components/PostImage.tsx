@@ -26,13 +26,13 @@ const PostImage = ({ cdnImage, isArticleImage, isGalleryImage }: Props) => {
         resolvedImagePosition,
       )}
       fill
-      // https://nextjs.org/docs/api-reference/next/image#sizes
-      sizes={
-        isArticleImage
-          ? '(max-width: 768px) 99vw, (max-width: 1200px) 48vw, 30vw'
-          : '(max-width: 390px) 99vw, (max-width: 768px) 48vw, 30vw'
-      }
       priority={true}
+      // https://nextjs.org/docs/api-reference/next/image#sizes
+      // sizes={
+      //   isArticleImage
+      //     ? '(max-width: 768px) 99vw, (max-width: 1200px) 48vw, 30vw'
+      //     : '(max-width: 390px) 99vw, (max-width: 768px) 48vw, 30vw'
+      // }
     />
   );
 };
