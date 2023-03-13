@@ -32,6 +32,14 @@ module.exports = {
         sans: ['Montserrat', 'sans-serif'],
         serif: ['"Roboto Serif"', 'serif'],
       },
+      fontSize: {
+        xxs: [
+          '0.5rem',
+          {
+            lineHeight: '0.75rem',
+          },
+        ],
+      },
       screens: myBreakpoints,
       maxWidth: {
         tablet: myBreakpoints['tablet'],
