@@ -1,4 +1,3 @@
-import PageTitle from '@/components/PageTitle';
 import Post from './components/Post';
 
 type Props = { posts: Post[] };

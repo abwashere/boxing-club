@@ -80,9 +80,9 @@ const PostPage = async ({ params: { slug } }: Props) => {
       </div>
       <div className='relative mt-2'>
         <div className='relative h-52 tablet:min-h-[500px] laptop:min-h-[700px]'>
-          <PostImage isArticleImage cdnImage={mainImage} />
+          <PostImage cdnImage={mainImage} />
         </div>
-        <div className='absolute bottom-0 hidden w-full px-2 pb-4 rounded-b-lg tablet:block tablet:rounded-none bg-opacity-60 bg-gray'>
+        <div className='absolute bottom-0 hidden w-full px-2 pb-4 tablet:block bg-opacity-60 bg-gray'>
           <PageTitle title={title} />
         </div>
       </div>
@@ -116,7 +116,7 @@ const PostPage = async ({ params: { slug } }: Props) => {
                 key={image._id}
                 className='relative min-h-[200px] tablet:min-h-[400px] tablet:mb-4'
               >
-                <PostImage cdnImage={image} isGalleryImage />
+                <PostImage cdnImage={image} />
               </div>
             ))}
           </div>

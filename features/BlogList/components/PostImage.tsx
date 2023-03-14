@@ -5,34 +5,18 @@ import Image from 'next/image';
 
 type Props = {
   cdnImage: Image;
-  isArticleImage?: boolean;
-  isGalleryImage?: boolean;
 };
 
-const PostImage = ({ cdnImage, isArticleImage, isGalleryImage }: Props) => {
+const PostImage = ({ cdnImage }: Props) => {
   const resolvedImagePosition = resolveImagePosition(cdnImage);
 
   return (
     <Image
       src={getUrlFor(cdnImage).url()}
       alt={cdnImage.alt || "Image principale de l'article"}
-      className={classNames(
-        'object-cover rounded-lg tablet:rounded-b-none',
-        {
-          'laptop:rounded-l-xl laptop:rounded-r-none': !isArticleImage,
-        },
-        { 'rounded-t-xl': isArticleImage },
-        { '!rounded-none': isGalleryImage },
-        resolvedImagePosition,
-      )}
+      className={classNames('object-cover', resolvedImagePosition)}
       fill
       priority={true}
-      // https://nextjs.org/docs/api-reference/next/image#sizes
-      // sizes={
-      //   isArticleImage
-      //     ? '(max-width: 768px) 99vw, (max-width: 1200px) 48vw, 30vw'
-      //     : '(max-width: 390px) 99vw, (max-width: 768px) 48vw, 30vw'
-      // }
     />
   );
 };
