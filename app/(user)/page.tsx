@@ -1,7 +1,7 @@
-import ArticleWrapper from '@/components/ArticleWrapper';
 import Loader from '@/components/Loader';
 import MainWrapper from '@/components/MainWrapper';
 import { RichTextComponents } from '@/components/PortableTextComponents';
+import SectionWrapper from '@/components/SectionWrapper';
 import Banner from '@/features/Banner';
 import Header from '@/features/Header';
 import { client } from '@/lib/sanity.client';
@@ -45,7 +45,7 @@ export default async function HomePage() {
       <MainWrapper isHomePage extraClassNames=' !left-0 !pt-0'>
         <Banner hero={heroSection} />
 
-        <ArticleWrapper>
+        <SectionWrapper>
           {prizesArticle && (
             <>
               <div className='relative h-32 m-auto tablet:w-2/3 tablet:h-48 laptop:h-64 desktop:h-72'>
@@ -66,9 +66,9 @@ export default async function HomePage() {
               </div>
             </>
           )}
-        </ArticleWrapper>
+        </SectionWrapper>
 
-        <ArticleWrapper>
+        <SectionWrapper>
           {classesArticles?.length && (
             <>
               <h2 className='mb-2 uppercase'>Nos cours</h2>
@@ -95,9 +95,9 @@ export default async function HomePage() {
               </div>
             </>
           )}
-        </ArticleWrapper>
+        </SectionWrapper>
 
-        <ArticleWrapper bgColor='white'>
+        <SectionWrapper bgColor='white'>
           <div className='!text-gray-dark'>
             <h2 className='mb-2 uppercase'>{partnersArticle.title}</h2>
             <p>{partnersArticle.subtitle}</p>
@@ -118,7 +118,7 @@ export default async function HomePage() {
               </div>
             ))}
           </div>
-        </ArticleWrapper>
+        </SectionWrapper>
       </MainWrapper>
     </>
   );

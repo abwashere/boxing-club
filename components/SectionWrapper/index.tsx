@@ -6,7 +6,7 @@ type Props = {
   bgColor?: 'white' | 'transparent' | 'black';
 };
 
-const ArticleWrapper = ({ children, bgColor = 'transparent' }: Props) => {
+const SectionWrapper = ({ children, bgColor = 'transparent' }: Props) => {
   return (
     <section
       className={classNames(
@@ -22,4 +22,4 @@ const ArticleWrapper = ({ children, bgColor = 'transparent' }: Props) => {
   );
 };
 
-export default ArticleWrapper;
+export default SectionWrapper;
