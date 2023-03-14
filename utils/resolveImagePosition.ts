@@ -7,6 +7,7 @@ const imagePositions = {
   'right-top': 'object-right-top',
   bottom: 'object-bottom',
   'left-bottom': 'object-left-bottom',
+  'right-bottom': 'object-right-bottom',
 };
 
 export default function resolveImagePosition(image: Image): string {

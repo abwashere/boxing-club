@@ -89,7 +89,8 @@ type ImagePosition =
   | 'left-top'
   | 'right-top'
   | 'bottom'
-  | 'left-bottom';
+  | 'left-bottom'
+  | 'right-bottom';
 
 interface Hotspot {
   _type: 'hotspot';
