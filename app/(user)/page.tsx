@@ -58,7 +58,7 @@ export default async function HomePage() {
                 />
               </div>
               <div className='p-2 text-sm text-gray-light'>
-                <p className='my-2'>Le VBC c&apos;est&nbsp;: </p>
+                <p className='my-2'>Le VBC c&apos;est&nbsp;:</p>
                 <PortableText
                   value={prizesArticle.body}
                   components={RichTextComponents}

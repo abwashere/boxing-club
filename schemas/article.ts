@@ -23,7 +23,6 @@ export default defineType({
         source: 'title',
         maxLength: 96,
       },
-      validation: Rule => Rule.required(),
     }),
     defineField({
       name: 'subtitle',
@@ -85,6 +84,7 @@ export default defineType({
       title: 'Coaches',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'person' } }],
+      validation: Rule => Rule.required(),
     }),
   ],
 });

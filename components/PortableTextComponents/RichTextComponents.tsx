@@ -24,8 +24,8 @@ export const RichTextComponents: PortableTextComponents = {
     ),
   },
   list: {
-    bullet: ({ children }) => <ul className='mt-4'>{children}</ul>,
-    number: ({ children }) => <ol className='mt-4'>{children}</ol>,
+    bullet: ({ children }) => <ul className='mb-4'>{children}</ul>,
+    number: ({ children }) => <ol className='mb-4'>{children}</ol>,
     checkmarks: ({ children }) => (
       <ol className='m-auto text-lg'>{children}</ol>
     ),
