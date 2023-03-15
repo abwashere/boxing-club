@@ -45,24 +45,22 @@ export default async function PostPage({ params: { slug } }: Props) {
 
   const { fullName, presentation, subtitle, photo } = coach;
 
-  const backButton = <BackButton text='retour' />;
-
   return (
-    <MainWrapper backButton={backButton}>
-      <div className='mb-4 tablet:mb-10'>
+    <MainWrapper backButton={<BackButton text='retour' />}>
+      <div className='mb-4 text-center tablet:mb-10'>
         <PageTitle title={fullName} />
       </div>
-      <div className='flex flex-col p-2 tablet:gap-8 laptop:gap-12 tablet:flex-row tablet:justify-center'>
-        <div className='relative w-full mb-4 h-96 tablet:w-1/3'>
+      <div className='flex flex-col w-full tablet:gap-8 laptop:gap-10 tablet:flex-row tablet:justify-center'>
+        <div className='relative tablet:w-1/3 laptop:w-1/2 desktop:w-1/3 mb-4 h-96 laptop:h-[60vh]'>
           <Image
             src={getUrlFor(photo).url()}
             alt={photo.alt}
-            className='object-cover object-top tablet:object-contain'
+            className='object-cover object-top'
             fill
-            sizes='(max-height: 390px) 192px, (max-height: 768px) 240px'
+            sizes='384px'
           />
         </div>
-        <div className='mb-8 tablet:flex-1 tablet:w-2/3'>
+        <div className='mb-8'>
           <h2 className='mb-4 text-yellow'>{subtitle}</h2>
           <PortableText value={presentation} components={RichTextComponents} />
         </div>

@@ -3,7 +3,6 @@ import classNames from 'classnames';
 type Props = {
   bgColor?: 'white' | 'transparent';
   backButton?: React.ReactNode;
-  isArticle?: boolean;
   isHomePage?: boolean;
   extraClassNames?: string;
   children: React.ReactNode;
@@ -11,7 +10,6 @@ type Props = {
 
 const MainWrapper = ({
   children,
-  isArticle = false,
   isHomePage = false,
   bgColor = 'transparent',
   backButton,
@@ -21,20 +19,16 @@ const MainWrapper = ({
     <main
       className={classNames(
         extraClassNames,
-        'py-4',
+        'h-full pb-16 px-1 tablet:px-4 laptop:px-8 desktop:px-32',
         { '!px-0': isHomePage },
-        {
-          'px-1 tablet:px-4 laptop:px-8 desktop:px-32': !isArticle,
-        },
-        {
-          'px-1 tablet:px-4 laptop:px-[20%]': isArticle,
-        },
         { 'bg-transparent': bgColor === 'transparent' },
         { 'bg-white': bgColor === 'white' },
       )}
     >
+      {backButton && (
+        <div className='flex justify-start mb-8'>{backButton}</div>
+      )}
       {children}
-      {backButton && <div className='flex justify-end'>{backButton}</div>}
     </main>
   );
 };

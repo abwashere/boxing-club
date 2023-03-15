@@ -28,11 +28,13 @@ export default async function EntraineursPage() {
     member.subtitle.match(/féminine/i),
   );
 
+  const cardsGroupClassNames =
+    'mb-8 grid grid-cols-2 tablet:grid-cols-4 gap-x-2 gap-y-4 laptop:gap-4';
+
   const getCoachCard = (coach: Person): JSX.Element => (
-    <div key={coach._id} className='mb-8 font-bold group'>
+    <div key={coach._id} className='font-bold group'>
       <Link href={entraineursUrl + `/${coach.slug.current}`}>
-        <p className='mb-2'>{coach.fullName}</p>
-        <div className='relative mb-2 h-52 tablet:h-48 laptop:h-56 desktop:h-80 group-hover:outline group-hover:outline-yellow'>
+        <div className='relative mb-2 h-52 tablet:h-48 laptop:h-56 desktop:h-96 group-hover:outline group-hover:outline-yellow'>
           <Image
             src={getUrlFor(coach.photo).url()}
             alt={coach.photo.alt}
@@ -41,48 +43,32 @@ export default async function EntraineursPage() {
             sizes='(max-height: 390px) 192px, (max-height: 768px) 240px'
           />
         </div>
+        <p className='mb-2'>{coach.fullName}</p>
       </Link>
     </div>
   );
-  const cardsGroupClassNames = 'mb-8';
+
+  const getGroupCards = (group: Person[]) => (
+    <div className={classNames(cardsGroupClassNames)}>
+      {group.map((coach: Person) => getCoachCard(coach))}
+    </div>
+  );
 
   return (
     <MainWrapper>
-      <PageTitle title='NOS ENTRAINEURS' />
-      <div className='grid mt-8 text-center tablet:grid-cols-3 gap-x-4'>
-        {kickCoaches && (
-          <div className={classNames(cardsGroupClassNames)}>
-            <h3 className='mb-6'>Boxe Pieds/Poings</h3>
-            {kickCoaches.map((coach: Person) => getCoachCard(coach))}
-          </div>
-        )}
-        {englishCoaches && (
-          <div className={classNames(cardsGroupClassNames)}>
-            <h3 className='mb-6'>Boxe Anglaise</h3>
-            {englishCoaches.map((coach: Person) => getCoachCard(coach))}
-          </div>
-        )}
-        {feminineCoaches && (
-          <div className={classNames(cardsGroupClassNames)}>
-            <h3 className='mb-6'>Boxe Féminine</h3>
-            {feminineCoaches.map((coach: Person) => getCoachCard(coach))}
-          </div>
-        )}
+      <div className='mb-4 text-center tablet:mb-10'>
+        <PageTitle title='NOS ENTRAINEURS' />
+      </div>
+      <div className='mt-8 text-center'>
+        <h3 className='mb-4 text-left'>Boxe Pieds/Poings</h3>
+        {kickCoaches && getGroupCards(kickCoaches)}
+        <h3 className='mb-4 text-left'>Boxe Anglaise</h3>
+        {englishCoaches && getGroupCards(englishCoaches)}
+        <h3 className='mb-4 text-left'>Boxe Féminine</h3>
+        {feminineCoaches && getGroupCards(feminineCoaches)}
       </div>
       <hr className='mb-8 text-gray' />
-      {allCoaches && (
-        <>
-          <h3 className='mb-6'>Tous les entraineurs</h3>
-          <div
-            className={classNames(
-              cardsGroupClassNames,
-              'grid grid-cols-2 tablet:grid-cols-3 gap-2',
-            )}
-          >
-            {allCoaches.map((coach: Person) => getCoachCard(coach))}
-          </div>
-        </>
-      )}
+      {allCoaches && getGroupCards(allCoaches)}
     </MainWrapper>
   );
 }

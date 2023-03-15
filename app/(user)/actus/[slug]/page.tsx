@@ -68,7 +68,7 @@ const PostPage = async ({ params: { slug } }: Props) => {
   const backButton = <BackButton text='retour' />;
 
   return (
-    <MainWrapper isArticle backButton={backButton}>
+    <MainWrapper backButton={backButton}>
       <div className='w-full my-4 tablet:hidden'>
         <PageTitle title={title} />
       </div>

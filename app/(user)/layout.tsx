@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='fr'>
-      <body className='relative flex flex-col min-h-screen justify-betweenh-screen bg-gray-dark'>
+      <body className='relative flex flex-col justify-between min-h-screen bg-gray-dark'>
         {children}
         <Footer />
       </body>
