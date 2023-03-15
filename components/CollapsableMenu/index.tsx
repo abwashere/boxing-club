@@ -22,8 +22,8 @@ const CollapsableMenu = ({
       className={classNames(
         extraClassNames,
         'top-100 rounded w-full tablet:px-4 tablet:py-2 tablet:text-right',
-        'tablet:shadow-xl shadow-neutral-100 tablet:bg-gray-dark tablet:bg-opacity-40',
-        'transition-transform scale-y-0 duration-500 origin-top',
+        'tablet:bg-black tablet:bg-opacity-80',
+        'transition-transform scale-y-0 duration-400 origin-top',
         {
           'transition-transform scale-y-100 duration-500': isOpen,
         },
@@ -32,7 +32,7 @@ const CollapsableMenu = ({
       {items.map(item => (
         <li
           key={item.url}
-          className={classNames(hoverItemClasses, 'h-6 tablet:mt-2')}
+          className={classNames(hoverItemClasses, 'h-6 tablet:mt-2 font-bold')}
           onClick={() => closeMobileNav && closeMobileNav()}
         >
           <NavLink {...item} />
