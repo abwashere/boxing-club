@@ -56,7 +56,7 @@ export default async function EntraineursPage() {
 
   return (
     <MainWrapper>
-      <div className='mb-4 text-center tablet:mb-10'>
+      <div className='my-4 text-center uppercase tablet:mb-10'>
         <PageTitle title='NOS ENTRAINEURS' />
       </div>
       <div className='mt-8 text-center'>

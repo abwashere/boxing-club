@@ -47,7 +47,7 @@ export default async function PostPage({ params: { slug } }: Props) {
 
   return (
     <MainWrapper backButton={<BackButton text='retour' />}>
-      <div className='mb-4 text-center tablet:mb-10'>
+      <div className='my-4 text-center uppercase tablet:mb-10'>
         <PageTitle title={fullName} />
       </div>
       <div className='flex flex-col w-full tablet:gap-8 laptop:gap-10 tablet:flex-row tablet:justify-center'>

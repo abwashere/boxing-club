@@ -110,6 +110,12 @@ interface Slug {
   current: string;
 }
 
+interface TableRow {
+  _key: string;
+  _type: 'tableRow';
+  cells: string[];
+}
+
 type UiColor =
   | 'gray'
   | 'gray-light'

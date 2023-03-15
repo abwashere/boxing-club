@@ -25,7 +25,7 @@ export default async function ActusPage() {
   const posts = await client.fetch(query);
   return (
     <MainWrapper>
-      <div className='flex w-full mb-10 tablet:justify-center'>
+      <div className='my-4 text-center uppercase tablet:mb-10'>
         <PageTitle title='ACTUALITÉS' />
       </div>
       <BlogList posts={posts} />

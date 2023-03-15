@@ -17,14 +17,12 @@ const query = groq`*[_type=='article' && slug.current=='presentation-du-club'][0
 
 export default async function PresentationPage() {
   const article = await client.fetch(query);
-  console.log(article);
   const { title, mainImage, gallery, body } = article;
-
   const organigramme = gallery.images[0];
 
   return (
     <MainWrapper>
-      <div className='mb-4 text-center tablet:mb-10'>
+      <div className='my-4 text-center uppercase tablet:mb-10'>
         <PageTitle title={title} />
       </div>
       <div className='relative mb-2 h-52 tablet:h-48 laptop:h-72 desktop:h-96 group-hover:outline group-hover:outline-yellow'>

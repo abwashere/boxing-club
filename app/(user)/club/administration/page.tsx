@@ -4,7 +4,7 @@ import MainWrapper from '@/components/MainWrapper';
 export default async function AdministrationPage() {
   return (
     <MainWrapper>
-      <div className='flex w-full mb-10 tablet:justify-center'>
+      <div className='my-4 text-center uppercase tablet:mb-10'>
         <PageTitle title='ADMINISTRATION' />
       </div>
     </MainWrapper>
