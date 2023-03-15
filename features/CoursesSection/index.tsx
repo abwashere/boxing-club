@@ -43,7 +43,7 @@ const CoursesSection = ({ articles }: Props) => {
                       alt={article.mainImage.alt}
                       className='object-cover object-top'
                       fill
-                      sizes='(max-height: 390px) 192px, (max-height: 768px) 240px'
+                      sizes=''
                     />
                   </div>
                   <h2 className='text-sm font-bold uppercase tablet:text-base'>

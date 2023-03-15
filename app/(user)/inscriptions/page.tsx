@@ -36,7 +36,7 @@ export default async function PresentationPage() {
 
       <table className='w-full m-auto mb-8 text-left border-b border-l laptop:w-2/3 laptop:text-sm text-xxs border-gray'>
         <tbody className=''>
-          {table.rows.map((row: any) => (
+          {table.rows.map((row: TableRow) => (
             <tr
               key={row._key}
               className={classNames(
