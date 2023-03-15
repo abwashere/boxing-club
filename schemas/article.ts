@@ -44,9 +44,16 @@ export default defineType({
           { title: 'Coachs', value: 'coachs' },
           { title: 'Administration', value: 'administration' },
           { title: 'Partenaires', value: 'partenaires' },
+          { title: 'Autres', value: 'autres' },
         ],
         layout: 'radio', // <-- defaults to 'dropdown'
       },
+    }),
+    defineField({
+      name: 'coaches',
+      title: 'Coaches',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'person' } }],
     }),
     defineField({
       name: 'mainImage',
@@ -78,13 +85,6 @@ export default defineType({
       name: 'table',
       title: 'Table',
       type: 'table',
-    }),
-    defineField({
-      name: 'coaches',
-      title: 'Coaches',
-      type: 'array',
-      of: [{ type: 'reference', to: { type: 'person' } }],
-      validation: Rule => Rule.required(),
     }),
   ],
 });
