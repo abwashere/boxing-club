@@ -2,6 +2,7 @@ import Loader from '@/components/Loader';
 import MainWrapper from '@/components/MainWrapper';
 import Banner from '@/features/Banner';
 import CoursesSection from '@/features/CoursesSection';
+import Footer from '@/features/Footer';
 import Header from '@/features/Header';
 import PartnersSection from '@/features/PartnersSection';
 import PrizesSection from '@/features/PrizesSection';
@@ -48,6 +49,8 @@ export default async function HomePage() {
 
         <PartnersSection article={partnersArticle} />
       </MainWrapper>
+
+      <Footer />
     </>
   );
 }

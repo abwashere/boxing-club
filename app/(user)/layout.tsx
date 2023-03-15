@@ -1,4 +1,3 @@
-import Footer from '@/features/Footer';
 import '@/styles/globals.css';
 import { Montserrat } from 'next/font/google';
 
@@ -24,10 +23,9 @@ export default function RootLayout({
   return (
     <html lang='fr'>
       <body
-        className={`relative flex flex-col justify-between min-h-screen bg-gray-dark ${montserrat.variable}`}
+        className={`relative min-h-screen bg-gray-dark ${montserrat.variable}`}
       >
         {children}
-        <Footer />
       </body>
     </html>
   );

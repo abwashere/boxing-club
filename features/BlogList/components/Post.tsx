@@ -12,7 +12,7 @@ type Props = { post: Post };
 
 const Post = ({ post }: Props) => {
   return (
-    <div className='mb-5 tablet:shadow-lg tablet:shadow-gray-shadow laptop:mb-0 laptop:flex'>
+    <div className='mb-5 tablet:shadow-lg tablet:shadow-gray-shadow laptop:mb-0 laptop:flex bg-gray'>
       <div className='relative mb-2 laptop:w-1/2 h-52 tablet:h-72 tablet:mb-0'>
         <PostImage cdnImage={post.mainImage} />
         <DateChip
@@ -21,7 +21,7 @@ const Post = ({ post }: Props) => {
         />
       </div>
 
-      <div className='p-2 border-b laptop:w-1/2 tablet:border-b-0 border-neutral-700 laptop:border laptop:p-4 group'>
+      <div className='p-2 laptop:w-1/2 border-neutral-700 laptop:border laptop:p-4 group'>
         <ClientSideRoute route={`${actusUrl}/${post.slug.current}`}>
           <div className='flex justify-between'>
             <h2 className='mb-2'>{post.title}</h2>

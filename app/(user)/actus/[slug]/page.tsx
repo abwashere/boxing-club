@@ -69,59 +69,61 @@ const PostPage = async ({ params: { slug } }: Props) => {
 
   return (
     <MainWrapper backButton={backButton}>
-      <div className='w-full my-4 tablet:hidden'>
-        <PageTitle title={title} />
-      </div>
-      <div>
-        <DateChip
-          extraClassNames='w-fit p-2 !bg-opacity-100'
-          date={getFormattedDate(publishedAt)}
-        />
-      </div>
-      <div className='relative mt-2'>
-        <div className='relative h-52 tablet:min-h-[500px] laptop:min-h-[700px]'>
-          <PostImage cdnImage={mainImage} />
-        </div>
-        <div className='absolute bottom-0 hidden w-full px-2 pb-4 tablet:block bg-opacity-60 bg-gray'>
+      <div className='laptop:mx-72'>
+        <div className='w-full my-4 tablet:hidden'>
           <PageTitle title={title} />
         </div>
-      </div>
-      <div className='flex flex-wrap my-2 mb-4 gap-x-2 gap-y-1'>
-        {categories.map(category => (
-          <Chip
-            key={category._id}
-            item={category.title}
-            color='gray'
-            extraClassNames='laptop:text-xs laptop:px-3'
-          />
-        ))}
-      </div>
-      {subtitle && (
         <div>
-          <PortableText value={subtitle} components={RichTextComponents} />
+          <DateChip
+            extraClassNames='w-fit p-2 !bg-opacity-100'
+            date={getFormattedDate(publishedAt)}
+          />
         </div>
-      )}
-      <div className='mb-8'>
-        <PortableText value={body} components={RichTextComponents} />
-      </div>
-      {secondaryImages && (
-        <>
-          <hr className='mb-2 text-gray' />
-          <p className='mb-2 text-center text-gray-light'>
-            Autres images de l&apos;évènement
-          </p>
-          <div className='grid gap-2 mb-4 tablet:grid-cols-2'>
-            {secondaryImages.map(image => (
-              <div
-                key={image._id}
-                className='relative min-h-[200px] tablet:min-h-[400px] tablet:mb-4'
-              >
-                <PostImage cdnImage={image} />
-              </div>
-            ))}
+        <div className='relative mt-2'>
+          <div className='relative h-52 tablet:min-h-[500px] laptop:min-h-[700px]'>
+            <PostImage cdnImage={mainImage} />
           </div>
-        </>
-      )}
+          <div className='absolute bottom-0 hidden w-full px-2 pb-4 tablet:block bg-opacity-60 bg-gray'>
+            <PageTitle title={title} />
+          </div>
+        </div>
+        <div className='flex flex-wrap my-2 mb-4 gap-x-2 gap-y-1'>
+          {categories.map(category => (
+            <Chip
+              key={category._id}
+              item={category.title}
+              color='gray'
+              extraClassNames='laptop:text-xs laptop:px-3'
+            />
+          ))}
+        </div>
+        {subtitle && (
+          <div>
+            <PortableText value={subtitle} components={RichTextComponents} />
+          </div>
+        )}
+        <div className='mb-8'>
+          <PortableText value={body} components={RichTextComponents} />
+        </div>
+        {secondaryImages && (
+          <>
+            <hr className='mb-2 text-gray' />
+            <p className='mb-2 text-center text-gray-light'>
+              Autres images de l&apos;évènement
+            </p>
+            <div className='grid gap-2 mb-4 tablet:grid-cols-2'>
+              {secondaryImages.map(image => (
+                <div
+                  key={image._id}
+                  className='relative min-h-[200px] tablet:min-h-[400px] tablet:mb-4'
+                >
+                  <PostImage cdnImage={image} />
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+      </div>
     </MainWrapper>
   );
 };
