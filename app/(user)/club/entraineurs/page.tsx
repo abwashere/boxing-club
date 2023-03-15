@@ -8,7 +8,7 @@ import { groq } from 'next-sanity';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const query = groq`*[_type=='person' && role == "coach"]{
+const query = groq`*[_type=='person' && "coach" in roles]{
   slug,
   subtitle,
   fullName,

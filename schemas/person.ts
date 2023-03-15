@@ -28,19 +28,30 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'role',
-      title: 'Role',
-      type: 'string',
-      options: {
-        list: [
-          { title: 'Coach', value: 'coach' },
-          { title: 'Manager', value: 'manager' },
-          { title: 'Préparateur physique', value: 'fitness-trainor' },
-          { title: 'Compétiteur', value: 'competitor' },
-        ],
-        // layout: 'radio', // <-- defaults to 'dropdown'
-      },
+      name: 'roles',
+      title: 'Roles',
+      type: 'array',
+      of: [
+        {
+          type: 'string',
+          options: {
+            list: [
+              { title: 'Coach', value: 'coach' },
+              { title: 'Manager', value: 'manager' },
+              { title: 'Préparateur physique', value: 'fitness-trainor' },
+              { title: 'Compétiteur', value: 'competitor' },
+            ],
+          },
+        },
+      ],
+
       validation: Rule => Rule.required(),
+    }),
+    defineField({
+      name: 'administrationRole',
+      title: 'Administration role',
+      description: 'Rôle au sein du bureau',
+      type: 'string',
     }),
     defineField({
       name: 'presentation',

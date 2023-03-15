@@ -68,8 +68,9 @@ interface Person {
   slug: Slug;
   presentation: Block;
   subtitle: string;
-  role: string;
+  roles: string[];
   photo: Image;
+  administrationRole: string;
 }
 
 interface Image {

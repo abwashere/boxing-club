@@ -17,7 +17,7 @@ type Props = {
 
 export async function generateStaticParams() {
   const query = groq`
-    *[_type == 'person' && role == "coach"]
+    *[_type == 'person' && "coach" in roles]
       {
         slug
       }
