@@ -34,7 +34,7 @@ export default async function PresentationPage() {
         <h2 className='text-yellow'>Planning du club</h2>
       </div>
 
-      <table className='w-full m-auto mb-8 text-left border-b border-l laptop:w-1/2 laptop:text-sm desktop:w-2/3 text-xxs border-gray'>
+      <table className='w-full m-auto mb-8 text-left border-b border-l laptop:w-2/3 laptop:text-sm text-xxs border-gray'>
         <tbody className=''>
           {table.rows.map((row: any) => (
             <tr
