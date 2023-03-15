@@ -29,8 +29,7 @@ module.exports = {
         red: colors.red['500'],
       },
       fontFamily: {
-        sans: ['Montserrat', 'sans-serif'],
-        serif: ['"Roboto Serif"', 'serif'],
+        sans: ['var(--font-montserrat)', 'sans-serif'],
       },
       fontSize: {
         xxs: [

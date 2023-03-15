@@ -1,5 +1,11 @@
 import Footer from '@/features/Footer';
 import '@/styles/globals.css';
+import { Montserrat } from 'next/font/google';
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  variable: '--font-montserrat',
+});
 
 export const metadata = {
   title: 'Villejuif Boxing Club',
@@ -17,7 +23,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang='fr'>
-      <body className='relative flex flex-col justify-between min-h-screen bg-gray-dark'>
+      <body
+        className={`relative flex flex-col justify-between min-h-screen bg-gray-dark ${montserrat.variable}`}
+      >
         {children}
         <Footer />
       </body>

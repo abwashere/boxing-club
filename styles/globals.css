@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Font sans */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
-/* Font serif */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,100;8..144,400;8..144,600&display=swap');
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -15,23 +10,22 @@
 
 @layer base {
   body {
-    @apply font-sans text-xs tablet:text-sm text-white
+    @apply font-sans text-xs tablet:text-sm text-white;
   }
 
   h1 {
-    @apply text-xl tablet:text-3xl font-bold
+    @apply text-xl tablet:text-3xl font-bold;
   }
 
   h2 {
-    @apply text-lg tablet:text-xl font-bold leading-5
+    @apply text-lg tablet:text-xl font-bold leading-5;
   }
 
   h3 {
-    @apply text-base tablet:text-lg font-bold text-gray-light leading-5
+    @apply text-base tablet:text-lg font-bold text-gray-light leading-5;
   }
 
   h4 {
-    @apply text-sm tablet:text-lg text-gray-light leading-5
+    @apply text-sm tablet:text-lg text-gray-light leading-5;
   }
-
 }
