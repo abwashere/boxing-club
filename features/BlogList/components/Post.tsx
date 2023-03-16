@@ -32,7 +32,11 @@ const Post = ({ post }: Props) => {
           </div>
           <div className='flex flex-wrap mb-2 gap-x-2 gap-y-1'>
             {post.categories.map(category => (
-              <Chip key={category._id} item={category.title} color='gray' />
+              <Chip
+                key={category._id}
+                item={category.title}
+                color='gray-dark'
+              />
             ))}
           </div>
           <div className='mb-2 font-normal line-clamp-2 laptop:line-clamp-3'>
