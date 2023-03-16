@@ -5,6 +5,7 @@ type Props = { text: string; color?: UiColor };
 const BackButton = ({ text, color = 'white' }: Props) => {
   return (
     <div
+      data-testid='back-button-div'
       onClick={() => window.history.back()}
       className='flex items-center px-2 py-1 border cursor-pointer w-fit rounded-xl border-gray hover:bg-gray'
     >
