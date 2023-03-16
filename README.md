@@ -1,8 +1,20 @@
+# VBC - _Villejuif Boxing Club_
+
+This app was meant to make a better version of my boxing club website, but also for learning purposes (use SSG, CMS, TS, tailwind...).
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+---
 
 ## Getting Started
 
-First, run the development server:
+First, install the app dependencies:
+
+```bash
+npm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -14,25 +26,45 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The `app` folder has 2 subfolders : (user) and (admin)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- (user) contains all the app pages/routes
+- (admin) contains the Sanity studio page
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Content management
 
-## Learn More
+You need a [Sanity](https://sanity.io) account to use this feature
 
-To learn more about Next.js, take a look at the following resources:
+Open [http://localhost:3000/studio/desk](http://localhost:3000/studio/desk) with your browser to access Sanity studio (content manager).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Sanity also provides a preview mode.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. To enable it, you need to make an API call to [http://localhost:3000/api/preview](http://localhost:3000/preview)
+
+2. To see the app preview, go to [http://localhost:3000](http://localhost:3000)
+
+3. To exit: [http://localhost:3000/api/exit-preview](http://localhost:3000/exit-preview)
+
+In **production**, replace host url with **vbc-abwashere.vercel.app**.
+
+---
 
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+First, install the vercel CLI globally, if needed:
+
+```bash
+npm install -g vercel
+```
+
+Then, run the build command:
+
+```bash
+vercel
+```
