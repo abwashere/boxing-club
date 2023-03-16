@@ -68,3 +68,11 @@ Then, run the build command:
 ```bash
 vercel
 ```
+
+If automatic deployment is enabled:
+
+```bash
+git push origin main # will automatically deploy in Preview
+```
+
+To deploy to prod, create a PR or rebase and push in local.
