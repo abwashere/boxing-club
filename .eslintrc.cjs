@@ -14,4 +14,12 @@ module.exports = {
     'unused-imports/no-unused-imports': 'error',
     '@typescript-eslint/no-non-null-assertion': 'off',
   },
+  overrides: [
+    {
+      files: ['**/*.test.js', '**/*.test.jsx', '**/*.spec.js', '**/*.spec.jsx'],
+      env: {
+        jest: true,
+      },
+    },
+  ],
 };

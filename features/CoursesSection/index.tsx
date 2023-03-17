@@ -46,9 +46,9 @@ const CoursesSection = ({ articles }: Props) => {
                       sizes=''
                     />
                   </div>
-                  <h2 className='text-sm font-bold uppercase tablet:text-base'>
+                  <h3 className='text-sm font-bold uppercase tablet:text-base'>
                     {article.title}
-                  </h2>
+                  </h3>
                 </div>
               ))}
             </div>
