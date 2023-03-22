@@ -10,19 +10,18 @@ type Props = {
 
 const Modal = ({ isOpen, onClose, children }: Props) => {
   if (!isOpen) return null;
+
   return (
-    <div
-      className='fixed inset-0 z-30 flex items-center justify-center p-2 bg-black tablet:p-12 bg-opacity-30 bg-blur-sm'
-      onClick={onClose}
-    >
-      <div className='flex flex-col items-center justify-center w-full h-full'>
+    <div className='fixed inset-0 z-30 flex items-center justify-center p-4 tablet:p-10 overflow:auto bg-black bg-opacity-30 backdrop-blur-sm'>
+      <div className='flex flex-col items-center justify-center h-full desktop:max-w-[50%]'>
         <div
-          className='mb-1 text-right text-white place-self-end'
+          className='place-self-end mb-1 text-right text-white '
+          role='button'
           onClick={onClose}
         >
-          <Close />
+          <Close extraClassNames='h-8 w-8 tablet:h-14 tablet:w-14' />
         </div>
-        <div className='px-2 py-8 overflow-y-scroll bg-white rounded-md overscroll-contain'>
+        <div className='p-4 tablet:p-8 rounded-md tablet:overflow-auto overscroll-contain bg-white'>
           {children}
         </div>
       </div>

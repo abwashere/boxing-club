@@ -15,8 +15,8 @@ const Course = ({ course }: Props) => {
   const { title, subtitle, coaches, body, mainImage } = course;
 
   return (
-    <div className='flex flex-col justify-center p-2 text-center tablet:p-4 laptop:p-8 tablet:mx-36 desktop:mx-80 text-gray-dark'>
-      <h2 className='mb-2 text-sm font-bold uppercase'>{title}</h2>
+    <div className='flex flex-col justify-center text-center text-gray-dark'>
+      <h2 className='mb-2 font-bold uppercase'>{title}</h2>
       <h3>{subtitle}</h3>
       <div className='laptop:py-8'>
         <div className='mb-8 text-left'>
