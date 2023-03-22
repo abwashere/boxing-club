@@ -27,12 +27,10 @@ const Footer = () => {
         </Link>
       </p>
       <p>
-        Inspired by <br />
-        &apos;
+        Inspired by{' '}
         <Link href='http://usvkickboxing.com/v2/' rel='noopener noreferrer'>
           Académie des boxed de Villejuif
         </Link>
-        &apos; website
       </p>
     </footer>
   );
