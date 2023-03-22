@@ -10,7 +10,7 @@ export const metadata = {
   title: 'Villejuif Boxing Club',
   description: 'Fake Boxing Club Website',
   icons: {
-    icon: '/cropped-logo-usv-32x32.png',
+    icon: '/images/cropped-logo-usv-32x32.png',
   },
   authors: [{ name: 'Audrey Belson' }],
 };
